@@ -1,0 +1,11 @@
+# Robots.txt for Yeju Blog
+User-agent: *
+Allow: /
+
+# Exclude configuration and helper scripts
+Disallow: /*.bak$
+Disallow: /*.ps1$
+Disallow: /*.bat$
+
+# Sitemap Reference
+Sitemap: https://jichanglink.com/sitemap.xml
