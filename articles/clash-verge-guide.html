@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>新一代客户端 Clash Verge 配置与使用教程 - 椰汁网络日志</title>
+    <meta name="description" content="图文讲解基于Tauri框架构建的Clash Verge客户端安装配置指南。包含汉化切换、配置文件导入、系统代理开启以及TUN内核驱动配置步骤，完美替代老旧的Clash for Windows。">
+    <meta name="keywords" content="Clash Verge教程, 汉化配置, Meta内核激活, 代理导入配置">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../index.html" class="logo">
+                <span>椰汁网络日志</span><div class="logo-dot"></div>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html">网站首页</a>
+                <a href="../tutorial.html">小白教程</a>
+                <a href="../articles.html" class="active">技术评测</a>
+                <a href="../ai-guide.html">AI指南</a>
+                <a href="../contact.html">商务合作</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主布局 -->
+    <div class="layout-wrapper">
+        <!-- 左侧文章详情 -->
+        <main class="main-content">
+            <article class="article-detail-box">
+                <header class="article-header">
+                    <h1>新一代客户端 Clash Verge 配置与使用教程</h1>
+                    <div class="article-meta">
+                        <span>📅 发布日期：2026-06-03</span>
+                        <span>🏷️ 分类：客户端</span>
+                        <span>👤 作者：椰汁评测组</span>
+                    </div>
+                </header>
+                
+                <section class="article-body">
+                    <p>在 2023 年底，大家熟知的 Clash for Windows (CFW) 以及 ClashX 开发者相继宣布停止维护，让许多网络加速用户一时间手足无措。幸运的是，开源社区迅速推出了接棒的替代者——<strong>Clash Verge Rev</strong>。它使用 Rust 语言配合极速的 Tauri 框架重构，不仅界面极其美观現代，而且内核无缝支持最新的 <strong>Mihomo (Clash Meta)</strong> 内核，支持更复杂的加密协议。本篇文章将教大家如何快速上手配置这款主流客户端。</p>
+
+                    <h2>一、安装与首选中文汉化切换</h2>
+                    <p>首先，请在我们的 <a href="../tutorial.html#windows">小白教程</a> 页面下载适用于您系统平台的最新安装包（注意区分 Windows x64 与 macOS 的不同版本芯片后缀）。</p>
+                    <p>安装完成后，软件默认展示为英文界面。我们可以通过以下简单的两步切换为中文：
+                    <br>1. 打开软件，点击左侧菜单栏底部的 <strong>【Settings (设置)】</strong>。
+                    <br>2. 找到 <strong>【Language】</strong> 下拉菜单，点击选中 <strong>【中文 (Chinese)】</strong>。无需重启，整个软件界面就会瞬间变为熟悉的中文环境。</p>
+
+                    <h2>二、订阅配置文件一键导入</h2>
+                    <p>汉化完成后，我们就可以导入机场的订阅节点了：</p>
+                    <ol>
+                        <li>进入您的机场控制台，点击<strong>【复制 Clash 订阅链接】</strong>。</li>
+                        <li>打开 Clash Verge，点击左侧菜单的<strong>【订阅】</strong>。</li>
+                        <li>在顶部输入框中粘贴刚才复制的订阅网址链接，点击右侧的<strong>【导入 (Import)】</strong>按钮。</li>
+                        <li>此时，订阅下方会刷出机场的配置文件卡片，鼠标左键<strong>单击选中该卡片</strong>。当卡片边缘亮起蓝色描边时，即代表该配置文件已成功在本地生效。</li>
+                    </ol>
+
+                    <h2>三、激活代理与路由分流模式选择</h2>
+                    <p>配置文件导入后，我们需要开启系统接管代理：
+                    <br>点击左侧的<strong>【设置】</strong> -> 找到<strong>【系统代理 (System Proxy)】</strong>选项 -> 将右侧的开关点击**点亮**。此时，你的系统流量就已经开始经过 Clash 进行流转了。</p>
+                    <blockquote>
+                        <p>为了获得最流畅的体验，点击左侧菜单的<strong>【代理】</strong>，在页面最顶部选择<strong>【规则 (Rule)】</strong>模式。此时访问百度、网银依然直连，访问 GitHub、Google 则走专线网络。</p>
+                    </blockquote>
+                    <p>你可以在代理组（通常是 PROXY 或 节点选择）中，点开下拉列表选择具体的地区节点。点击节点右侧闪电图标可以测试其真实延迟，优先选用延迟低（绿色）的服务器节点。</p>
+
+                    <h2>四、进阶配置：激活 TUN 内核虚拟网卡</h2>
+                    <p>如果你发现某些客户端（如 Steam 联机游戏、模拟器、Git 命令端）无法正常走加速，这是因为系统代理没有覆盖非浏览器流量。我们需要开启 TUN 模式：
+                    <br>首先，退出软件。在桌面上右键点击 Clash Verge 图标，选择<strong>【以管理员身份运行】</strong>。进入【设置】-> 找到【TUN 模式 (TUN Mode)】并开启。此时，软件会接管你网卡的全部收发流量，各种大型游戏或终端软件就能获得完美的出海加速能力了。</p>
+                </section>
+            </article>
+        </main>
+
+        <!-- 右侧侧边栏 -->
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">⚙️ 相关推荐</h3>
+                <ul class="widget-links">
+                    <li><a href="why-paid-airports.html">为什么使用付费机场</a></li>
+                    <li><a href="smooth-4k-8k.html">4K与8K视频播放优化</a></li>
+                    <li><a href="../tutorial.html">客户端下载与教程</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="logo">
+                    <span>椰汁网络日志</span><div class="logo-dot"></div>
+                </a>
+                <p>致力于提供2026年最新、最客观的代理服务与机场推荐，普及网络协议常识，帮助用户安全无障碍地浏览全球互联网资源。</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-nav-col">
+                    <h4>快速导航</h4>
+                    <a href="../index.html">网站首页</a>
+                    <a href="../tutorial.html">使用教程</a>
+                    <a href="../articles.html">技术评测</a>
+                    <a href="../ai-guide.html">AI指南</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>客户端下载</h4>
+                    <a href="../tutorial.html#windows">Clash Verge (Win)</a>
+                    <a href="../tutorial.html#macos">Clash Verge (Mac)</a>
+                    <a href="../tutorial.html#android">Clash for Android</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>支持与合作</h4>
+                    <a href="../ai-guide.html">AI指南</a>
+                    <a href="../contact.html">商务对接</a>
+                    <a href="mailto:jielun0227@gmail.com">故障申诉</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 椰汁网络日志. All Rights Reserved. 推荐节点仅限用于正规跨境科研与外贸办公。</p>
+            <div class="footer-tech-info">
+                CORE STATUS: <span>ONLINE</span> | CRYPTO: <span>SHA-256</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 脚本 -->
+    <script src="../js/canvas-bg.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
+

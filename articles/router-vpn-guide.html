@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>路由器翻墙详细教程：最佳 OpenWrt/路由器客户端配置指南 - 椰汁网络日志</title>
+    <meta name="description" content="2026年最新OpenWrt软路由/路由器科学上网详细教程。介绍OpenClash与Mihomo等软路由客户端的订阅安装、全局接管配置步骤，实现全屋设备无感出海。">
+    <meta name="keywords" content="路由器翻墙, OpenWrt配置, OpenClash教程, 软路由科学上网, 全屋无感翻墙">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../index.html" class="logo">
+                <span>椰汁网络日志</span><div class="logo-dot"></div>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html">网站首页</a>
+                <a href="../tutorial.html">小白教程</a>
+                <a href="../articles.html" class="active">技术评测</a>
+                <a href="../ai-guide.html">AI指南</a>
+                <a href="../contact.html">商务合作</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主布局 -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+            <article class="article-detail-box">
+                <header class="article-header">
+                    <h1>路由器翻墙详细教程：最佳 OpenWrt/路由器客户端配置指南</h1>
+                    <div class="article-meta">
+                        <span>📅 发布日期：2026-07-06</span>
+                        <span>🏷️ 路由器/软路由</span>
+                        <span>👤 作者：椰汁评测组</span>
+                    </div>
+                </header>
+                
+                <section class="article-body">
+                    <p>对于智能家居设备繁多、或有 Apple TV / 电视盒子观影需求的用户来说，在每个手机和电脑终端上单独配置科学上网客户端不仅麻烦，还容易遇到抢占网速的问题。最好的解决方案是**在路由器（特别是基于 OpenWrt 的软路由）上配置代理客户端**。这样能直接实现“全屋所有联网设备自动无感出海”，极其丝滑。</p>
+                    <p>本篇文章，椰汁评测组就以 OpenWrt 平台上目前最主流、最强大的 <strong>OpenClash</strong> 插件为例，教大家如何快速配置路由器网络，开启全屋无感翻墙之旅。</p>
+
+                    <h2>一、前期准备与客户端下载</h2>
+                    <p>首先，你需要确保你的路由器使用的是 OpenWrt 固件（支持安装第三方 ipk 插件），或者是现成的软路由设备。如果你的固件中没有集成 OpenClash，可以前往 GitHub 官方仓库下载最新的 OpenClash ipk 包以及内核（Mihomo/Clash Meta 内核）进行安装部署。</p>
+
+                    <h2>二、OpenClash 订阅配置一键导入</h2>
+                    <ol>
+                        <li>使用浏览器登录你的 OpenWrt 路由器后台管理界面，在左侧菜单中依次点击 <strong>【服务】 -> 【OpenClash】</strong> 选项进入主页。</li>
+                        <li>点击上方横向菜单栏的 <strong>【配置文件订阅】</strong> 选项。</li>
+                        <li>点击 <strong>【添加】</strong> 按钮，开始填写机场订阅：
+                            <br>- <strong>订阅地址:</strong> 粘贴你在机场控制面板中复制的 <strong>Clash 订阅链接</strong>。
+                            <br>- <strong>配置文件名:</strong> 自定义一个名称（如 `yeju-airport`）。
+                            <br>- <strong>自动更新:</strong> 建议勾选开启，设置每天凌晨 4 点自动拉取更新。
+                        </li>
+                        <li>填写完成后点击 <strong>【保存配置】</strong>，然后点击 <strong>【开始启动】</strong> 按钮。路由器会自动下载你的机场节点配置文件到本地。</li>
+                    </ol>
+
+                    <h2>三、模式选择与核心运行设置</h2>
+                    <p>当配置文件拉取成功后，我们需要在 <strong>【运行状态】</strong> 菜单中完成以下关键参数调整：</p>
+                    <ul>
+                        <li><strong>运行模式选择：</strong> 推荐选择 <strong>【Fake-IP (增强模式)】</strong>，这种模式下路由器会在局域网内劫持 DNS 解析，提供极佳的连接爆发速度，完美兼容各种电视盒子的流媒体秒开。</li>
+                        <li><strong>代理规则模式：</strong> 在控制面板（Yacd 面板）中选择 <strong>【Rule (规则)】模式</strong>，保障国内淘宝、微信等应用流量依然直接走宽带网卡，不走机场扣除流量。</li>
+                        <li><strong>DNS 劫持配置：</strong> 建议在本地 DNS 配置中勾选 <strong>【本地 DNS 劫持】</strong> 开关，防止终端设备由于本地 DNS 污染导致网页无法访问。</li>
+                    </ul>
+
+                    <h2>四、启动全屋代理与测速验证</h2>
+                    <p>完成参数调整后，点击页面底部的 <strong>【启动 OpenClash】</strong> 按钮。当运行状态指示灯全部变为绿色，且最上方显示“服务运行中”时，即代表路由器代理已全面接管。</p>
+                    <p>此时，无论是你的手机、电脑、智能电视、还是 PS5/Switch 游戏主机，无需进行任何客户端配置，只要连上该路由器的 Wi-Fi，即可无感秒开 Google / YouTube 等网页，完美解锁 Netflix 4K 以及 ChatGPT。</p>
+                </section>
+            </article>
+        </main>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">⚙️ 相关推荐</h3>
+                <ul class="widget-links">
+                    <li><a href="clash-verge-guide.html">Clash Verge 配置教程</a></li>
+                    <li><a href="prevent-running.html">机场跑路避坑常识</a></li>
+                    <li><a href="../ranking.html">2026 物理专线排行</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="logo">
+                    <span>椰汁网络日志</span><div class="logo-dot"></div>
+                </a>
+                <p>致力于提供2026年最新、最客观的代理服务与机场推荐，普及网络协议常识，帮助用户安全无障碍地浏览全球互联网资源。</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-nav-col">
+                    <h4>快速导航</h4>
+                    <a href="../index.html">网站首页</a>
+                    <a href="../tutorial.html">使用教程</a>
+                    <a href="../articles.html">技术评测</a>
+                    <a href="../ai-guide.html">AI指南</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>客户端下载</h4>
+                    <a href="../tutorial.html#windows">Clash Verge (Win)</a>
+                    <a href="../tutorial.html#macos">Clash Verge (Mac)</a>
+                    <a href="../tutorial.html#android">Clash for Android</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>支持与合作</h4>
+                    <a href="../ai-guide.html">AI指南</a>
+                    <a href="../contact.html">商务对接</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 椰汁网络日志. All Rights Reserved. 推荐节点仅限用于正规跨境科研与外贸办公。</p>
+        </div>
+    </footer>
+
+    <script src="../js/canvas-bg.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>

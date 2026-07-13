@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shadowrocket (小火箭) 2026 最新下载、安装与节点导入配置教程 - 椰汁网络日志</title>
+    <meta name="description" content="2026年最新苹果手机Shadowrocket（小火箭）客户端配置教程。包含美区ID获取、扫码与订阅链接导入步骤、节点切换及分流规则配置，帮助iOS用户实现极速出海。">
+    <meta name="keywords" content="Shadowrocket教程, 小火箭配置, iOS科学上网, 订阅导入">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../index.html" class="logo">
+                <span>椰汁网络日志</span><div class="logo-dot"></div>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html">网站首页</a>
+                <a href="../tutorial.html">小白教程</a>
+                <a href="../articles.html" class="active">技术评测</a>
+                <a href="../ai-guide.html">AI指南</a>
+                <a href="../contact.html">商务合作</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主布局 -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+            <article class="article-detail-box">
+                <header class="article-header">
+                    <h1>Shadowrocket (小火箭) 2026 最新下载、安装与节点导入配置教程</h1>
+                    <div class="article-meta">
+                        <span>📅 发布日期：2026-07-06</span>
+                        <span>🏷️ 苹果iOS</span>
+                        <span>👤 作者：椰汁评测组</span>
+                    </div>
+                </header>
+                
+                <section class="article-body">
+                    <p>对于苹果 iOS (iPhone/iPad) 用户而言，<strong>Shadowrocket（俗称“小火箭”）</strong> 绝对是目前使用最广泛、上手门槛最低的科学上网代理客户端。它不仅完美支持 Shadowsocks、Trojan、VLESS、Hysteria 2 等全套主流混淆加密协议，而且运行占用低，规则分流做得极其出色。今天，椰汁评测组就为大家整理一份 2026 年最新最保姆级的小火箭配置使用教程。</p>
+
+                    <h2>一、小火箭客户端的下载与安装</h2>
+                    <p>由于政策原因，国区 App Store 已经下架了小火箭软件，且在国区搜索出的均为山寨流氓广告软件。正确的下载方法如下：</p>
+                    <ol>
+                        <li>你需要准备一个海外（如美国、港台等地区）的 Apple ID 账号。你可以参考我们的 <a href="free-apple-id.html">免费美区 Apple ID 共享账号</a> 页面获取临时账号使用，或者自行注册一个独享美区账号。</li>
+                        <li>打开 App Store 应用商店，点击右上角头像退出国区账号，登录你的海外 Apple ID。</li>
+                        <li>搜索 <strong>【Shadowrocket】</strong>（注意开发者信息，认准正版蓝色火箭图标），下载并安装。</li>
+                    </ol>
+
+                    <h2>二、机场订阅节点的一键导入（两种方式）</h2>
+                    <p>安装完成后，我们需要将订阅的机场节点导入小火箭中，通常有两种极简导入方法：</p>
+                    
+                    <h3>方法 1：扫码一键导入</h3>
+                    <p>在电脑或平板上打开你的机场控制面板，在订阅页面点击<strong>【显示订阅二维码】</strong>。打开手机上的小火箭客户端，点击左上角的<strong>【扫码】图标</strong>，直接扫描屏幕上的二维码，小火箭便会自动识别并一次性导入机场所有的节点列表。</p>
+
+                    <h3>方法 2：一键配置链接自动拉取</h3>
+                    <p>如果你直接在手机上操作，可以登录机场后台控制台，在【一键导入】栏目中点击<strong>【一键导入 Shadowrocket】</strong>，手机会自动弹出跳转提示，点击同意小火箭便会自动唤起并拉取配置列表。若不支持一键，可复制 <strong>Shadowrocket 订阅链接</strong>，在小火箭中点击右上角 <strong>【+】</strong>，类型选中 <strong>【Subscrbe (订阅)】</strong>，在 URL 中粘贴链接并保存即可。</p>
+
+                    <h2>三、开启代理与分流模式选择</h2>
+                    <p>节点列表导入后，开启小火箭的步骤极简：</p>
+                    <ol>
+                        <li>在主界面的 <strong>【全局路由】</strong> 中，建议点击选择 <strong>【配置 (Config)】模式</strong>（这类似于 Clash 的规则分流模式，可以实现国内外网络智能分流，省电省流，国内 APP 访问依然直连）。</li>
+                        <li>在下方的节点列表中，点击展开你的机场节点，<strong>左键单击选中</strong>任意一个延迟低的节点（节点左侧会出现黄色或蓝色指示圆点）。</li>
+                        <li>点击主界面最顶部的 <strong>【未连接 (Not Connected)】右侧的开关按钮</strong> 激活连接。如果是首次使用，iOS 系统会弹出“添加 VPN 配置”的提示，请点击 <strong>【Allow (允许)】</strong>，并按住 Home 键或使用面容 ID 进行授权指纹解锁。</li>
+                        <li>当最上方开关显示为**已连接**，并且手机通知栏出现小小的 [VPN] 标志时，恭喜你，你的苹果手机已经可以自由畅游互联网了！</li>
+                    </ol>
+
+                    <h2>⚠️ 安全隐私防范提示</h2>
+                    <p>在使用小火箭时，请务必关注订阅链接的保密性。不要将订阅地址泄露给第三方。如果您的小火箭提示更新失败或连不上，优先检查机场官网是否更换了新的订阅网址，并及时删除老订阅以防隐私外泄（可参考我们的 <a href="subscription-security.html">订阅安全防范指南</a>）。</p>
+                </section>
+            </article>
+        </main>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">⚙️ 相关推荐</h3>
+                <ul class="widget-links">
+                    <li><a href="free-apple-id.html">免费共享美区 Apple ID</a></li>
+                    <li><a href="subscription-security.html">订阅链接泄露的安全后果</a></li>
+                    <li><a href="../ranking.html">2026 最新专线机场推荐</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="logo">
+                    <span>椰汁网络日志</span><div class="logo-dot"></div>
+                </a>
+                <p>致力于提供2026年最新、最客观的代理服务与机场推荐，普及网络协议常识，帮助用户安全无障碍地浏览全球互联网资源。</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-nav-col">
+                    <h4>快速导航</h4>
+                    <a href="../index.html">网站首页</a>
+                    <a href="../tutorial.html">使用教程</a>
+                    <a href="../articles.html">技术评测</a>
+                    <a href="../ai-guide.html">AI指南</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>客户端下载</h4>
+                    <a href="../tutorial.html#windows">Clash Verge (Win)</a>
+                    <a href="../tutorial.html#macos">Clash Verge (Mac)</a>
+                    <a href="../tutorial.html#android">Clash for Android</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>支持与合作</h4>
+                    <a href="../ai-guide.html">AI指南</a>
+                    <a href="../contact.html">商务对接</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 椰汁网络日志. All Rights Reserved. 推荐节点仅限用于正规跨境科研与外贸办公。</p>
+        </div>
+    </footer>
+
+    <script src="../js/canvas-bg.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>

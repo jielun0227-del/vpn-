@@ -1,0 +1,418 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>新手使用教程与知识库 - 椰汁网络日志</title>
+    <meta name="description" content="椰汁网络日志网络加速小白使用教程与常见问题知识库。包含Windows、macOS、Android和iOS系统下Clash Verge与Shadowrocket客户端的下载、配置订阅与分流模式选择指南，助您秒速上手科学上网。">
+    <meta name="keywords" content="Clash Verge教程, 科学上网教程, 小火箭配置, 订阅链接导入, 客户端下载">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <span>椰汁网络日志</span><div class="logo-dot"></div>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html">网站首页</a>
+                <a href="ranking.html">机场排行</a>
+                <a href="tutorial.html" class="active">小白教程</a>
+                <a href="articles.html">技术评测</a>
+                <a href="ai-guide.html">AI指南</a>
+                <a href="contact.html">商务合作</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 顶部标题区 -->
+    <section class="hero" style="padding-bottom: 2rem;">
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                快速开始 / TUTORIAL
+            </div>
+            <h1>网络加速客户端<span>新手配置教程</span></h1>
+            <p>本教程汇总了主流系统平台下开源网络连接客户端的下载、配置订阅与模式选择，帮助您快速熟悉使用方法。</p>
+        </div>
+    </section>
+
+    <!-- 主布局 -->
+    <div class="layout-wrapper" style="margin-top: 1rem;">
+        <!-- 左侧核心教程 -->
+        <main class="main-content">
+            
+            <div class="tutorial-card">
+                <!-- 平台切换栏 -->
+                <div class="tutorial-tabs">
+                    <button class="tab-btn active" onclick="switchPlatform(event, 'windows')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+                        Windows 电脑
+                    </button>
+                    <button class="tab-btn" onclick="switchPlatform(event, 'macos')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 7.54 16.59A10 10 0 1 1 12 2zm0 3a7 7 0 0 0-5.28 11.61 7 7 0 1 0 10.56 0A7 7 0 0 0 12 5z"/></svg>
+                        macOS 苹果电脑
+                    </button>
+                    <button class="tab-btn" onclick="switchPlatform(event, 'android')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                        Android 手机
+                    </button>
+                    <button class="tab-btn" onclick="switchPlatform(event, 'ios')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        iOS (iPhone / iPad)
+                    </button>
+                </div>
+
+                <!-- Windows 教程 -->
+                <div id="windows" class="tab-content active">
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-num">01</div>
+                            <div class="step-body">
+                                <h3>获取订阅链接</h3>
+                                <p>在您购买的机场后台（如飞猫云、唯兔云等），找到<strong>【快速导入】</strong>或<strong>【便捷订阅】</strong>区域，点击<strong>【复制 Clash 订阅链接】</strong>。请务必妥善保管该链接，切勿泄露给他人。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">02</div>
+                            <div class="step-body">
+                                <h3>下载安装 Clash Verge</h3>
+                                <p>Windows 端推荐使用新一代图形化客户端 <strong>Clash Verge Rev</strong>。它支持中文，界面极简，底层使用的是 Meta 高性能内核，稳定抗封锁。</p>
+                                <div class="client-download-box">
+                                    <div class="client-info">
+                                        <span class="client-name">Clash Verge Rev (x64)</span>
+                                        <span class="client-badge">Windows 推荐</span>
+                                    </div>
+                                    <p class="client-desc">开源安全的全新 Clash 客户端。支持规则分流、TUN 虚拟网卡模式，自带中文包。</p>
+                                    <div class="btn-group">
+                                        <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="nofollow" class="btn btn-glow btn-sm">GitHub 官方下载</a>
+                                        <a href="https://jichanglink.com" target="_blank" rel="nofollow" class="btn btn-outline btn-sm">备用高速下载</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">03</div>
+                            <div class="step-body">
+                                <h3>导入配置文件</h3>
+                                <p>打开 Clash Verge 客户端，点击左侧菜单栏的<strong>【订阅 (Profiles)】</strong>。在顶部的输入框中粘贴刚才在第一步复制的<strong>【Clash订阅链接】</strong>，然后点击右侧的<strong>【导入 (Import)】</strong>按钮。导入成功后，选中该配置文件使其亮起激活。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">04</div>
+                            <div class="step-body">
+                                <h3>开启代理，选择模式</h3>
+                                <p>点击左侧菜单栏的<strong>【设置 (Settings)】</strong>，将<strong>【系统代理 (System Proxy)】</strong>开关打开。然后点击左侧的<strong>【代理 (Proxies)】</strong>，在上方选择模式：
+                                <br>• <strong>规则模式 (Rule，推荐)</strong>：自动分流，国内网站直连以节省机场流量，国外网站走加速。
+                                <br>• <strong>全局模式 (Global)</strong>：所有流量都走机场加速（国内网页会变慢）。
+                                <br>• <strong>直连模式 (Direct)</strong>：不使用任何加速节点。</p>
+                                <div class="alert-box">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                    <span><strong>安全提醒：</strong> 强烈建议在代理设置中选用“规则模式”。使用全局模式可能会导致国内网银、微信等无法正常登录或提示IP异常。</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- macOS 教程 -->
+                <div id="macos" class="tab-content">
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-num">01</div>
+                            <div class="step-body">
+                                <h3>复制机场订阅链接</h3>
+                                <p>登录您的机场账户，进入用户中心，在订阅区域点击<strong>【复制 Clash 订阅】</strong>。不要在公共场合分享此专属链接。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">02</div>
+                            <div class="step-body">
+                                <h3>下载 Clash Verge macOS 版</h3>
+                                <p>对于苹果电脑用户，我们同样推荐使用 <strong>Clash Verge Rev macOS版</strong>。若您的 Mac 是 M1/M2/M3 系列芯片，请选择 <code>aarch64</code> 版本；如果是旧款 Intel 芯片，请选择 <code>x64</code> 版本。</p>
+                                <div class="client-download-box">
+                                    <div class="client-info">
+                                        <span class="client-name">Clash Verge Mac (aarch64 / x64)</span>
+                                        <span class="client-badge">macOS 推荐</span>
+                                    </div>
+                                    <p class="client-desc">支持 M 系列及 Intel 芯片 Mac。对 macOS 系统的功耗与内存占用进行了专门优化。</p>
+                                    <div class="btn-group">
+                                        <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="nofollow" class="btn btn-glow btn-sm">GitHub 官方下载</a>
+                                        <a href="https://jichanglink.com" target="_blank" rel="nofollow" class="btn btn-outline btn-sm">官方安装包</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">03</div>
+                            <div class="step-body">
+                                <h3>导入并启用配置</h3>
+                                <p>打开 Clash Verge。前往<strong>【Profiles】</strong>界面，在顶部输入框粘入订阅链接，点击<strong>【Import】</strong>。成功加载后，点击选中新导入的配置文件名称。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">04</div>
+                            <div class="step-body">
+                                <h3>启动并选择节点</h3>
+                                <p>进入 macOS 左侧的 <strong>【Settings】</strong>，将 <strong>【System Proxy】</strong> 设置为开启。在 <strong>【Proxies】</strong> 面板中，选择 <strong>【Rule (规则模式)】</strong> 并在节点组里点选任意香港或日本节点（绿色延迟数越小速度越快）。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Android 教程 -->
+                <div id="android" class="tab-content">
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-num">01</div>
+                            <div class="step-body">
+                                <h3>复制 Clash 订阅地址</h3>
+                                <p>登录机场控制台，找到<strong>【一键导入/订阅复制】</strong>，点击<strong>【复制 Clash 订阅地址】</strong>，然后将其发送或在手机上粘贴保存。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">02</div>
+                            <div class="step-body">
+                                <h3>下载 Clash for Android</h3>
+                                <p>安卓平台首选 <strong>Clash for Android</strong> 客户端（简称 CFA）。其操作界面高度原生化，资源占用极低，且运行极其稳定。</p>
+                                <div class="client-download-box">
+                                    <div class="client-info">
+                                        <span class="client-name">Clash for Android</span>
+                                        <span class="client-badge">Android 推荐</span>
+                                    </div>
+                                    <p class="client-desc">安卓端最成熟的加速网络客户端。支持全局/绕过大陆等分流策略。</p>
+                                    <div class="btn-group">
+                                        <a href="https://github.com/Kr328/ClashForAndroid/releases" target="_blank" rel="nofollow" class="btn btn-glow btn-sm">GitHub 官方发布页</a>
+                                        <a href="https://jichanglink.com" target="_blank" rel="nofollow" class="btn btn-outline btn-sm">APK 安装包下载</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">03</div>
+                            <div class="step-body">
+                                <h3>导入订阅文件</h3>
+                                <p>打开 Clash for Android 软件，点击<strong>【配置 (Profiles)】</strong> -> <strong>【新配置 (New Profile)】</strong> -> <strong>【从URL导入 (URL)】</strong>。在“URL”一栏中粘贴第一步复制的订阅链接，并在“名称”栏输入机场名字，点击右上角软盘图标保存。最后勾选选中该配置。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">04</div>
+                            <div class="step-body">
+                                <h3>点亮连接开关</h3>
+                                <p>返回客户端主页，点击<strong>【已停止 (Stopped)】</strong>灰色大按钮，在弹出的 VPN 连接请求中点击<strong>【确定】</strong>，按钮变成橙色<strong>【已运行】</strong>即代表连接成功。随后可在<strong>【控制面板】</strong>里的“代理”中点选具体节点。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- iOS 教程 -->
+                <div id="ios" class="tab-content">
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-num">01</div>
+                            <div class="step-body">
+                                <h3>下载 Shadowrocket (小火箭)</h3>
+                                <p>在 iOS (iPhone / iPad) 上，网络加速最推荐使用 <strong>Shadowrocket</strong>（俗称小火箭）。
+                                <br><strong style="color: var(--secondary);">⚠️ 注意：</strong> 苹果 App Store 国区无法下载该软件。您需要使用港区或美区 Apple ID 登录 App Store 购买下载（售价约 $2.99 ）。您可以向购买的机场客服或相关渠道租用/购买海外 Apple ID。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">02</div>
+                            <div class="step-body">
+                                <h3>获取链接一键导入</h3>
+                                <p>用 iPhone 浏览器登录机场后台，进入控制面板，在<strong>【一键导入】</strong>区域点击<strong>【一键导入 Shadowrocket】</strong>，手机会自动唤起小火箭并自动配置。
+                                <br>如果没有一键导入选项，请点击<strong>【复制小火箭/SS订阅链接】</strong>，然后打开小火箭，软件会自动弹窗检测并询问是否添加该订阅链接，点击“确定”即可。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">03</div>
+                            <div class="step-body">
+                                <h3>测试节点延迟</h3>
+                                <p>导入完成后，订阅列表下会出现一长串国家和地区节点。点击<strong>【连通性测试 (Latency Test)】</strong>，每个节点右侧会刷出具体的 Ping 值，建议选择 100ms 以下的节点使用。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">04</div>
+                            <div class="step-body">
+                                <h3>选择模式并启动连接</h3>
+                                <p>将底部的<strong>【全局路由 (Global Routing)】</strong>设置为<strong>【配置 (Config，相当于规则模式)】</strong>。最后点击顶部的<strong>【未连接 (Not Connected)】</strong>开关，在弹出的系统 VPN 权限申请中输入 iPhone 锁屏密码即可开始使用。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 常见问题知识库 FAQs -->
+            <div class="faq-wrap">
+                <div class="section-title-wrap">
+                    <div class="section-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.95M1 20v-3a7 7 0 0 1 12-4.9M8 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
+                    </div>
+                    <div class="section-title-text">
+                        <h2>常见问题深度问答 FAQs</h2>
+                        <span>RESOLVING COMMON PITFALLS</span>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>1. 连上客户端后，为什么微信、淘宝等国内软件很慢或者完全打不开？</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            这是因为您错误地开启了<strong>【全局模式 (Global)】</strong>。在全局模式下，您访问国内网站的请求也会发送至机场节点，再由节点绕回国内，这会导致延迟急剧增加。
+                            <br><strong style="color: var(--primary);">解决方案：</strong> 请将客户端的路由模式切换为<strong>【规则模式 (Rule)】</strong>或<strong>【配置 (Config)】</strong>，分流规则会自动识别国内域名和IP，使其不需要绕行国外节点，保证国内软件满速运行。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>2. 导入订阅链接时提示 "Invalid Config"、"500 Internal Error" 或解析失败？</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            这通常由以下三个原因导致：
+                            <br>① <strong>订阅链接未被正确激活</strong>：部分机场购买套餐后可能需要等待数分钟以配置服务器节点；或者您的套餐已经过期或流量超支。
+                            <br>② <strong>复制了错误的链接格式</strong>：比如将 V2ray 的订阅格式强行导入到 Clash 中。请确认你在机场后台点击的是“Clash 订阅”字样的复制按钮。
+                            <br>③ <strong>网络拥堵或被运营商阻断</strong>：您可以尝试暂时断开本地 WiFi 切换为手机热点，或者开启已有的其他代理再行下载更新订阅。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>3. 节点后面的 1x、2x、0.1x 究竟是什么含义？我该怎么选？</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            这是机场的<strong>流量计费倍率</strong>。它决定了你实际消耗的套餐流量：
+                            <br>• <strong>0.1x 倍率</strong>：你用了 10GB 流量，机场只扣除 1GB 的额度，适合重度下载或看长视频。
+                            <br>• <strong>1.0x 倍率</strong>：标准计费，用多少扣多少，为大部分常规节点。
+                            <br>• <strong>2.0x / 5.0x 倍率</strong>：通常是顶级 IEPL 游戏专线节点，由于专线带宽极其昂贵，使用该节点消耗的流量额度会翻倍。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>4. 什么是 TUN 模式？我们在什么情况下需要开启它？</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            传统的“系统代理”仅对支持系统代理解析的浏览器和聊天工具起效。而<strong>TUN 模式</strong>会在系统底层安装一个虚拟网卡，将整个操作系统所有的网络流量（包含命令终端、某些特定主机游戏、UWP应用如微软商店等）强行拉入 Clash 的解析规则中。
+                            <br>如果你需要进行终端开发（Git / Docker 拉取镜像），或者需要游玩某些必须要外网登录的主机和单机游戏，建议开启客户端中的 <strong>【TUN 模式 (TUN Mode)】</strong>。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">📌 快速跳转</h3>
+                <ul class="widget-links">
+                    <li><a href="#windows" onclick="scrollToPlatform('windows')">Windows 系统安装</a></li>
+                    <li><a href="#macos" onclick="scrollToPlatform('macos')">macOS 系统安装</a></li>
+                    <li><a href="#android" onclick="scrollToPlatform('android')">Android 系统安装</a></li>
+                    <li><a href="#ios" onclick="scrollToPlatform('ios')">iOS 系统安装</a></li>
+                </ul>
+            </div>
+            
+            <div class="widget cooperation-widget">
+                <h4>💼 商务推广合作</h4>
+                <p>遇到客户端连接障碍，或者需要机场推广入驻？欢迎向我们投递邮件。</p>
+                <a href="contact.html" class="btn btn-glow btn-sm" style="width: 100%; justify-content: center; padding: 0.5rem;">
+                    联系通道
+                </a>
+            </div>
+        </aside>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span>椰汁网络日志</span><div class="logo-dot"></div>
+                </a>
+                <p>致力于提供2026年最新、最客观的代理服务与机场推荐，普及网络协议常识，帮助用户安全无障碍地浏览全球互联网资源。</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-nav-col">
+                    <h4>快速导航</h4>
+                    <a href="index.html">网站首页</a>
+                    <a href="tutorial.html">使用教程</a>
+                    <a href="articles.html">技术评测</a>
+                    <a href="ai-guide.html">AI指南</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>客户端下载</h4>
+                    <a href="tutorial.html#windows">Clash Verge (Win)</a>
+                    <a href="tutorial.html#macos">Clash Verge (Mac)</a>
+                    <a href="tutorial.html#android">Clash for Android</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>支持与合作</h4>
+                    <a href="ai-guide.html">AI指南</a>
+                    <a href="contact.html">商务对接</a>
+                    <a href="mailto:jielun0227@gmail.com">故障申诉</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 椰汁网络日志. All Rights Reserved. 推荐节点仅限用于正规跨境科研与外贸办公。</p>
+            <div class="footer-tech-info">
+                CORE STATUS: <span>ONLINE</span> | CRYPTO: <span>SHA-256</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 脚本 -->
+    <script src="js/canvas-bg.js"></script>
+    <script>
+        // 平台选择 Tab 交互
+        function switchPlatform(evt, platformId) {
+            const tabcontents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabcontents.length; i++) {
+                tabcontents[i].className = tabcontents[i].className.replace(" active", "");
+            }
+            
+            const tablinks = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            
+            document.getElementById(platformId).className += " active";
+            evt.currentTarget.className += " active";
+        }
+
+        // 侧边栏定位
+        function scrollToPlatform(platformId) {
+            const buttons = document.getElementsByClassName("tab-btn");
+            let indexToClick = 0;
+            if (platformId === 'windows') indexToClick = 0;
+            if (platformId === 'macos') indexToClick = 1;
+            if (platformId === 'android') indexToClick = 2;
+            if (platformId === 'ios') indexToClick = 3;
+            
+            buttons[indexToClick].click();
+            document.querySelector(".tutorial-card").scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+

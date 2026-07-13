@@ -1,0 +1,9 @@
+# Ignore backups
+*.bak
+
+# Ignore local tool settings
+.gemini/
+.agents/
+
+# Ignore log files
+*.log

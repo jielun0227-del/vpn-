@@ -1,0 +1,27 @@
+# 椰汁博客项目实施任务清单
+
+- [x] 初始化目录结构与资源文件夹（`css/`, `js/`, `articles/`）
+- [x] 编写核心设计系统与基础样式表 `css/style.css`
+- [x] 编写 Canvas 赛博网格粒子背景脚本 `js/canvas-bg.js`
+- [x] 编写主页核心交互脚本 `js/app.js`（包括机场卡片数据、实时测速模拟、条件筛选）
+- [x] 编写主页 `index.html`（结构设计与科技风卡片展示）
+- [x] 编写通俗易懂的知识库使用教程 `tutorial.html`
+- [x] 编写技术评测与文章列表页 `articles.html`
+- [x] 撰写 10 篇关于机场与网络代理的深度科普文章（每篇约 500 字，包含完整 SEO Meta 信息）：
+  - [x] 1. 为什么选择付费机场 (`articles/why-paid-airports.html`)
+  - [x] 2. IPLC/IEPL 专线与普通中转解析 (`articles/iplc-iepl-transit.html`)
+  - [x] 3. Shadowsocks, Trojan, VMess 协议对比 (`articles/protocols-comparison.html`)
+  - [x] 4. 降低机场“跑路”损失避坑指南 (`articles/prevent-running.html`)
+  - [x] 5. 4K/8K 视频播放网络优化 (`articles/smooth-4k-8k.html`)
+  - [x] 6. 订阅链接安全性与保护措施 (`articles/subscription-security.html`)
+  - [x] 7. Clash Verge 客户端配置指南 (`articles/clash-verge-guide.html`)
+  - [x] 8. 延迟、带宽与丢包率深度解析 (`articles/latency-vs-bandwidth.html`)
+  - [x] 9. 全局、规则与直连模式的区别 (`articles/global-vs-rule-mode.html`)
+  - [x] 10. 新兴代理客户端 sing-box 简介 (`articles/sing-box-introduction.html`)
+- [x] 按照二次要求：移除首页的“实时节点测速面板” and “机场筛选与定位器”板块
+- [x] 按照二次要求：将网页底色变更为白色/浅色系，优化整站对比度与玻璃拟态表现
+- [x] 按照二次要求：在 `js/canvas-bg.js` 中重新设计实现动态旋转星环轨道（Star Ring Orbit）背景
+- [x] 按照三次要求：极简商务合作页面（`contact.html`），移除终端窗口及合作版块侧边栏，只保留合作要求及联系邮箱
+- [x] 按照四次要求：在导航菜单中添加“机场排行”板块，编写对应的综合排序/表格响应式排行页 `ranking.html`
+- [x] 按照五次要求：将主页 index.html 布局修改为 Ermao Plume 风格的博客评测文章流列表，包含 4 篇精心润色修改的加速测评文章，链接分别指向我们的评测细节
+- [x] 运行自动化子代理校验，捕获最终演示录像并交付 Walkthrough

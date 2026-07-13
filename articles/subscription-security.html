@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>如何防止你的机场订阅地址泄露？ - 椰汁网络日志</title>
+    <meta name="description" content="订阅链接内含核心密钥，泄露会导致套餐流量被盗刷。揭秘野鸡订阅转换器的抓取后门陷阱，介绍如何使用本地订阅转换、安全重置订阅链接的实操指南。">
+    <meta name="keywords" content="订阅链接安全, 订阅转换器后门, 机场流量被盗, 保护订阅地址">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../index.html" class="logo">
+                <span>椰汁网络日志</span><div class="logo-dot"></div>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html">网站首页</a>
+                <a href="../tutorial.html">小白教程</a>
+                <a href="../articles.html" class="active">技术评测</a>
+                <a href="../ai-guide.html">AI指南</a>
+                <a href="../contact.html">商务合作</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主布局 -->
+    <div class="layout-wrapper">
+        <!-- 左侧文章详情 -->
+        <main class="main-content">
+            <article class="article-detail-box">
+                <header class="article-header">
+                    <h1>订阅链接安全警告：如何防止你的机场订阅地址泄露？</h1>
+                    <div class="article-meta">
+                        <span>📅 发布日期：2026-06-08</span>
+                        <span>🏷️ 分类：安全防护</span>
+                        <span>👤 作者：椰汁评测组</span>
+                    </div>
+                </header>
+                
+                <section class="article-body">
+                    <p>当我们购买完加速机场的套餐后，得到的最重要的凭证就是那一串形如 <code>https://api.jichanglink.com/link/xxxx?sub=3</code> 的<strong>【订阅链接 (Subscription URL)】</strong>。我们只需要把链接复制到 Clash 或小火箭中就能立刻刷出节点。然而，许多用户并不知晓，这个看似普通的网址链接，实际上相当于你该机场账户的**“网银取款密码”**。一旦链接发生泄漏，不仅你的个人信息会被窥视，你的套餐流量也面临被盗刷一空的风险。</p>
+
+                    <h2>一、订阅链接泄露有哪些严重的后果？</h2>
+                    <p>很多新手会把自己的订阅链接随手发在公共 Telegram 群里寻求技术支持，或者将其贴到公共论坛上。这相当于直接把钥匙送给黑客：</p>
+                    <ul>
+                        <li><strong>套餐流量被恶意盗刷：</strong> 得到链接的任何人都可以立刻将其导入自己的设备，共享你的月度额度。通常当你发现网页卡顿、流量耗尽时，才在后台看到有数个陌生 IP 正在狂挂 BT 下载。</li>
+                        <li><strong>节点被强力拉黑或封禁：</strong> 如果多台设备在不同的城市和运营商下同时使用同一个订阅链接，很多机场的安全规则会自动检测到“IP异地多开”，为了防止恶意共享会直接对你的账号进行永久封号（不予退款）。</li>
+                        <li><strong>用户上网隐私暴露：</strong> 某些极特殊的订阅配置里可能附带你所绑定邮箱的混淆标识，黑客通过逆向订阅内容，可以与网络上的社工库匹配，获取你的真实身份隐私。</li>
+                    </ul>
+
+                    <h2>二、警惕“订阅转换器”的蜜罐后门陷阱</h2>
+                    <p>由于有些客户端只支持特定格式（例如 Shadowsocks 客户端不支持直入 Clash 配置），很多用户会选择使用网上的**“在线订阅转换器”**网站（如 Subconverter Web Interface）。</p>
+                    <p>将你原本安全的订阅链接，直接粘贴进这些不知名、无备案的免费转换网站的输入框中，你的订阅链接就已经被存储在他们的服务器数据库中了。一些居心不良的转换器站长会在后台运行“爬虫脚本”，自动收集并筛选流量大、额度多、线路高级的专线订阅链接，将其打包二次出售或者自己使用。</p>
+                    <blockquote>
+                        <p><strong>防雷金律：</strong> 尽量避免使用非官方、不知名的第三方订阅转换网站。若必须使用，请选择大厂提供的开源托管站，或者学习如何在本地部署 Subconverter 容器进行无痕转换。</p>
+                    </blockquote>
+
+                    <h2>三、订阅链接防泄漏“三步走”实操</h2>
+                    <ol>
+                        <li><strong>绝不将订阅链接填入任何公共在线测试、转换或托管工具。</strong></li>
+                        <li><strong>如果不慎泄露，立刻去机场后台点击【重置订阅（Reset Token）】。</strong> 重置后，旧的订阅链接将彻底失效，黑客便无法继续使用你的节点。随后你需要在本地客户端中删除旧配置，导入最新生成的订阅地址。</li>
+                        <li><strong>合理配置客户端的密码锁。</strong> 在多人共用的电脑或手机上，为你的 Clash 或 Shadowrocket 设置启动密码，防止他人在借用你设备时通过扫码或者复制配置直接提取出你的订阅内容。</li>
+                    </ol>
+                </section>
+            </article>
+        </main>
+
+        <!-- 右侧侧边栏 -->
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">⚙️ 相关推荐</h3>
+                <ul class="widget-links">
+                    <li><a href="why-paid-airports.html">付费机场的隐私防护</a></li>
+                    <li><a href="prevent-running.html">机场跑路防坑策略</a></li>
+                    <li><a href="../tutorial.html">客户端下载与教程</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="logo">
+                    <span>椰汁网络日志</span><div class="logo-dot"></div>
+                </a>
+                <p>致力于提供2026年最新、最客观的代理服务与机场推荐，普及网络协议常识，帮助用户安全无障碍地浏览全球互联网资源。</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-nav-col">
+                    <h4>快速导航</h4>
+                    <a href="../index.html">网站首页</a>
+                    <a href="../tutorial.html">使用教程</a>
+                    <a href="../articles.html">技术评测</a>
+                    <a href="../ai-guide.html">AI指南</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>客户端下载</h4>
+                    <a href="../tutorial.html#windows">Clash Verge (Win)</a>
+                    <a href="../tutorial.html#macos">Clash Verge (Mac)</a>
+                    <a href="../tutorial.html#android">Clash for Android</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>支持与合作</h4>
+                    <a href="../ai-guide.html">AI指南</a>
+                    <a href="../contact.html">商务对接</a>
+                    <a href="mailto:jielun0227@gmail.com">故障申诉</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 椰汁网络日志. All Rights Reserved. 推荐节点仅限用于正规跨境科研与外贸办公。</p>
+            <div class="footer-tech-info">
+                CORE STATUS: <span>ONLINE</span> | CRYPTO: <span>SHA-256</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 脚本 -->
+    <script src="../js/canvas-bg.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
+

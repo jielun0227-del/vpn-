@@ -1,0 +1,438 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2026年稳定好用的机场推荐排行 - 椰汁网络日志</title>
+    <meta name="description" content="椰汁网络日志2026年最新网络加速专线中转机场实测排行榜。基于丢包率、晚高峰延迟、出口带宽以及性价比等维度对10大主流机场进行数据统计与多维度综合排行。">
+    <meta name="keywords" content="机场排行榜, 机场稳定排名, 低延迟机场推荐, 机场性价比对比">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 独立排行榜样式 */
+        .ranking-container {
+            background: transparent;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            border: none;
+            padding: 0;
+            box-shadow: none;
+            margin-bottom: 3.5rem;
+        }
+
+        .sort-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .sort-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .sort-btn {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: var(--transition-fast);
+        }
+
+        .sort-btn:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            background: rgba(0, 150, 199, 0.03);
+        }
+
+        .sort-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 150, 199, 0.25);
+        }
+
+        /* 赛博卡片微调与角标设计 */
+        .card {
+            position: relative;
+            padding-top: 2.75rem !important;
+        }
+
+        .rank-badge-ribbon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 800;
+            border-bottom-right-radius: 12px;
+            font-family: var(--font-tech);
+            color: #ffffff;
+            z-index: 10;
+            letter-spacing: 0.5px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .rank-badge-ribbon.rank-1 {
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(255, 165, 0, 0.3);
+        }
+
+        .rank-badge-ribbon.rank-2 {
+            background: linear-gradient(135deg, #c0c0c0, #8a8a8a);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(169, 169, 169, 0.3);
+        }
+
+        .rank-badge-ribbon.rank-3 {
+            background: linear-gradient(135deg, #cd7f32, #8b4513);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+        }
+
+        .rank-badge-ribbon.rank-other {
+            background: rgba(0, 242, 254, 0.08);
+            border-right: 1px solid rgba(0, 242, 254, 0.2);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <span>椰汁网络日志</span><div class="logo-dot"></div>
+            </a>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html">网站首页</a>
+                <a href="ranking.html" class="active">机场排行</a>
+                <a href="tutorial.html">小白教程</a>
+                <a href="articles.html">技术评测</a>
+                <a href="ai-guide.html">AI指南</a>
+                <a href="contact.html">商务合作</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 标题区 -->
+    <section class="hero" style="padding-bottom: 2rem;">
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                数据看板 / LEADERBOARD
+            </div>
+            <h1>加速服务<span>多维度推荐排行</span>对比</h1>
+            <p>汇总各优质网络加速服务的线路协议、流媒体与AI解锁、高峰期表现及性价比，提供客观的对比参考。</p>
+        </div>
+    </section>
+
+    <!-- 主布局 -->
+    <div class="layout-wrapper" style="margin-top: 1rem;">
+        <!-- 左侧排行榜 -->
+        <main class="main-content">
+            <div class="ranking-container">
+                <!-- 排序导航栏 -->
+                <div class="sort-bar">
+                    <span class="sort-label">排序维度：</span>
+                    <button class="sort-btn active" onclick="sortRank('default')">推荐排行</button>
+                    <button class="sort-btn" onclick="sortRank('price-asc')">价格：低到高</button>
+                    <button class="sort-btn" onclick="sortRank('price-desc')">价格：高到低</button>
+                </div>
+
+                <!-- 排行列表 -->
+                <div class="card-list" id="rank-list">
+                    <!-- JS 动态渲染 -->
+                </div>
+            </div>
+        </main>
+
+        <!-- 右侧侧边栏 -->
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">📊 排行说明</h3>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.75rem;">本排行根据加速服务的线路质量、实际晚高峰连通率、客服回复时效等综合维度进行主观评估筛选，仅收录当前最稳定好用的服务商：</p>
+                <ul style="list-style: none; font-size: 0.8rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem; padding-left: 0;">
+                    <li>• <strong>专线保障</strong>：收录服务商多采用 IEPL/IPLC 专线</li>
+                    <li>• <strong>高峰抗压</strong>：所有节点均通过晚高峰防拥堵实测</li>
+                    <li>• <strong>全场景解锁</strong>：支持流媒体与主流 AI 创作平台</li>
+                    <li>• <strong>月付防坑</strong>：推荐用户月付订阅以规避运营风险</li>
+                </ul>
+            </div>
+            
+            <div class="widget cooperation-widget">
+                <h4>💼 申请加入排行</h4>
+                <p>若您是加速服务运营方，希望对您的连接性能进行测速并展示在排行榜中？</p>
+                <a href="contact.html" class="btn btn-glow btn-sm" style="width: 100%; justify-content: center; padding: 0.5rem;">
+                    商务对接
+                </a>
+            </div>
+        </aside>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span>椰汁网络日志</span><div class="logo-dot"></div>
+                </a>
+                <p>致力于提供2026年最新、最客观的代理服务与机场推荐，普及网络协议常识，帮助用户安全无障碍地浏览全球互联网资源。</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-nav-col">
+                    <h4>快速导航</h4>
+                    <a href="index.html">网站首页</a>
+                    <a href="ranking.html">使用教程</a>
+                    <a href="articles.html">技术评测</a>
+                    <a href="ai-guide.html">AI指南</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>客户端下载</h4>
+                    <a href="tutorial.html#windows">Clash Verge (Win)</a>
+                    <a href="tutorial.html#macos">Clash Verge (Mac)</a>
+                    <a href="tutorial.html#android">Clash for Android</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>支持与合作</h4>
+                    <a href="ai-guide.html">AI指南</a>
+                    <a href="contact.html">商务对接</a>
+                    <a href="mailto:jielun0227@gmail.com">故障申诉</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 椰汁网络日志. All Rights Reserved. 推荐节点仅限用于正规跨境科研与外贸办公。</p>
+            <div class="footer-tech-info">
+                CORE STATUS: <span>ONLINE</span> | CRYPTO: <span>SHA-256</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 脚本 -->
+    <script src="js/canvas-bg.js"></script>
+    <script>
+        // 排行榜静态数据库
+        const rankData = [
+            {
+                rank: 1,
+                id: "kuaili",
+                name: "快狸",
+                price: 15,
+                type: "dedicated",
+                protocolLabel: "VLESS / Shadowsocks",
+                lineType: "企业级 IEPL 专线",
+                unlocks: "原生流媒体 / ChatGPT 解锁",
+                regions: "亚太与欧美多国节点",
+                slogan: "💡 VLESS 下一代协议，IEPL 专线极速秒开",
+                editorNote: "主打企业级专线与新一代VLESS协议，防封锁与连通率表现极其出色。对于流媒体解锁及海外办公有高要求的用户首选。",
+                affLink: "https://yyo649929.kuailiaff.com/#/register?code=EjqxPHQZ",
+                reviewLink: "./articles/kuaili-review.html"
+            },
+            {
+                rank: 2,
+                id: "jilianyun",
+                name: "极连云",
+                price: 18,
+                type: "dedicated",
+                protocolLabel: "Trojan / V2ray",
+                lineType: "IPLC 专线",
+                unlocks: "晚高峰 0 丢包 / 4K秒开",
+                regions: "全球 30+ 节点覆盖",
+                slogan: "⚡ 定位中高端，极致稳定与极速响应",
+                editorNote: "专线直达，抗封锁和晚高峰抗压性能极强，几乎无延迟抖动。适合对稳定性和游戏延迟有苛刻要求的高端用户。",
+                affLink: "https://jiliancloud.org/",
+                reviewLink: "./articles/jilianyun-review.html"
+            },
+            {
+                rank: 3,
+                id: "edgenova",
+                name: "edgenova边缘节点",
+                price: 12,
+                type: "transit",
+                protocolLabel: "Trojan / Vmess",
+                lineType: "Anycast 智能节点中转",
+                unlocks: "全平台多终端兼容",
+                regions: "覆盖亚太及欧美核心节点",
+                slogan: "📡 兼顾性价比与稳定性的优质专线",
+                editorNote: "采用智能边缘中转技术，能够根据用户所在的地理位置智能分配最快中转点。延迟低，价格适中，非常稳定。",
+                affLink: "https://everett7623.edgenovaaff.cc/#/register?code=tT3McfnN",
+                reviewLink: "./articles/edgenova-review.html"
+            },
+            {
+                rank: 4,
+                id: "sujie",
+                name: "速界",
+                price: 20,
+                type: "dedicated",
+                protocolLabel: "Hysteria 2 / Trojan",
+                lineType: "IPLC 顶级专线 + Hysteria 2",
+                unlocks: "抗封锁能力满分",
+                regions: "晚高峰万兆带宽直达",
+                slogan: "🔥 为极致速度与连通率而生",
+                editorNote: "率先支持 Hysteria 2 下一代协议，结合顶级专线，拥有无与伦比的爆速体验和抗干扰能力，突破各种极端封锁环境。",
+                affLink: "https://solmira.sujiestttt.xyz/#/register?code=ysM6ozIh",
+                reviewLink: "./articles/sujie-review.html"
+            },
+            {
+                rank: 5,
+                id: "guangnian",
+                name: "光年梯",
+                price: 10,
+                type: "transit",
+                protocolLabel: "Shadowsocks / Trojan",
+                lineType: "BGP 多线中转优化",
+                unlocks: "流媒体完美解锁 / 大流量",
+                regions: "全场景 40+ 地区支持",
+                slogan: "🚀 资深老牌服务，超高性价比大流量",
+                editorNote: "老牌加速服务，以稳定运营与极佳的性价比著称。中转线路在晚高峰表现依然稳健，是日常追剧与轻度办公的性价比之选。",
+                affLink: "https://1579.gntaff.com/#/?code=PzvG9uPl",
+                reviewLink: "./articles/guangnian-review.html"
+            },
+            {
+                rank: 6,
+                id: "huanyuyun",
+                name: "寰宇云",
+                price: 22,
+                type: "dedicated",
+                protocolLabel: "Trojan / Shadowsocks",
+                lineType: "IEPL 专线 + 高速直连",
+                unlocks: "AI 工具 / ChatGPT 完美支持",
+                regions: "高端外贸专线覆盖",
+                slogan: "💎 专为 AI 创作与高端商务外贸设计",
+                editorNote: "专线加持下的高端品牌，针对 ChatGPT、Claude 等 AI 工具以及外贸办公进行了全面分流优化，IP纯净度高，极力推荐商务办公使用。",
+                affLink: "https://jichanglink.com",
+                reviewLink: "./articles/huanyuyun-review.html"
+            },
+            {
+                rank: 7,
+                id: "kexinyun",
+                name: "可信云",
+                price: 14,
+                type: "transit",
+                protocolLabel: "Vmess / Trojan",
+                lineType: "纯中转优化线路",
+                unlocks: "主流平台及网页极速加载",
+                regions: "多端并发不限速",
+                slogan: "🛡️ 主打安全可信赖，多端流畅并发",
+                editorNote: "线路稳定且数据传输安全程度高。支持多设备同时在线，不限速度上限。适合多设备家庭以及看重稳定性的用户使用。",
+                affLink: "https://yp76688.kosingaff.com/#/register?code=KJxZyDig",
+                reviewLink: "./articles/kexinyun-review.html"
+            }
+        ];
+ 
+        // 动态渲染列表
+        function renderRankList(data) {
+            const listContainer = document.getElementById('rank-list');
+            listContainer.innerHTML = data.map(item => `
+                <article class="card" id="card-${item.id}">
+                    <div class="rank-badge-ribbon rank-${item.rank <= 3 ? item.rank : 'other'}">
+                        No.${item.rank}
+                    </div>
+                    <div class="card-header">
+                        <div class="card-title-wrap">
+                            <div class="card-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <h3 class="card-title">${item.name}</h3>
+                        </div>
+                        <div class="card-price">
+                            <span class="price-currency">￥</span><span class="price-value">${item.price}</span><span class="price-period">/月起</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-slogan">
+                        <span>${item.slogan}</span>
+                    </div>
+                    
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">底层协议</span>
+                            <div class="spec-value">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                ${item.protocolLabel}
+                            </div>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">线路类型</span>
+                            <div class="spec-value">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                ${item.lineType}
+                            </div>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">流媒体解锁</span>
+                            <div class="spec-value">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                ${item.unlocks}
+                            </div>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">节点覆盖</span>
+                            <div class="spec-value">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                ${item.regions}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-note">
+                        <div class="note-title">编辑评语</div>
+                        <div class="note-content">${item.editorNote}</div>
+                    </div>
+                    
+                    <div class="card-actions">
+                        <a href="${item.affLink}" target="_blank" rel="nofollow noopener noreferrer" class="btn btn-glow">
+                            获取优惠
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="${item.reviewLink}" class="btn btn-outline">阅读评测</a>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // 排序处理器
+        function sortRank(criteria) {
+            // 切换按钮激活态
+            const btns = document.querySelectorAll('.sort-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+ 
+            let sorted = [...rankData];
+            if (criteria === 'default') {
+                sorted.sort((a, b) => a.rank - b.rank);
+            } else if (criteria === 'price-asc') {
+                sorted.sort((a, b) => a.price - b.price);
+            } else if (criteria === 'price-desc') {
+                sorted.sort((a, b) => b.price - a.price);
+            }
+ 
+            renderRankList(sorted);
+        }
+
+        // 初始装载
+        document.addEventListener('DOMContentLoaded', () => {
+            renderRankList(rankData);
+        });
+    </script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
