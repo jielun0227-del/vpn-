@@ -1,4 +1,4 @@
-// 机场数据列表
+﻿// 机场数据列表
 const airports = [
     {
         id: "feimaoyun",
@@ -87,7 +87,7 @@ const airports = [
         regions: "流媒体原生完美解锁",
         protocolLabel: "V2ray / Trojan",
         editorNote: "公网中转中的优秀品牌，线路容量充沛，套餐流量性价比极高。特别适合大流量下载、长期挂载视频的用户使用。",
-        affLink: "https://jichanglink.com",
+        affLink: "https://yzrztop.com",
         reviewLink: "./articles/global-vs-rule-mode.html"
     },
     {
@@ -102,7 +102,7 @@ const airports = [
         regions: "40+ 地区解锁支持",
         protocolLabel: "Shadowsocks / Trojan",
         editorNote: "针对 Netflix, Disney+, HBO, ChatGPT 进行了专门的节点解锁和分流优化，流媒体画质自动锁死最高清，看剧党神器。",
-        affLink: "https://jichanglink.com",
+        affLink: "https://yzrztop.com",
         reviewLink: "./articles/protocols-comparison.html"
     },
     {
@@ -147,7 +147,7 @@ const airports = [
         regions: "覆盖常用亚太地区节点",
         protocolLabel: "Trojan 协议",
         editorNote: "预算有限用户的最佳搭档。价格压到了惊人的月付5元起，基础访问和网页浏览非常流畅，适合轻度冲浪党入门尝试。",
-        affLink: "https://jichanglink.com",
+        affLink: "https://yzrztop.com",
         reviewLink: "./articles/prevent-running.html"
     }
 ];
