@@ -28,6 +28,7 @@
                 <a href="ranking.html">机场排行</a>
                 <a href="tutorial.html">小白教程</a>
                 <a href="articles.html" class="active">技术评测</a>
+                <a href="ai-guide.html">AI鎸囧崡</a>
                 <a href="contact.html">商务合作</a>
             </div>
         </nav>
@@ -46,68 +47,8 @@
     </section>
 
     <!-- 主布局 -->
-    <div class="layout-wrapper layout-left-sidebar" style="margin-top: 1rem;">
-        <!-- 左侧文章目录 -->
-        <aside class="left-directory-sidebar">
-            <div class="directory-widget">
-                <h3 class="directory-title">📂 文章目录</h3>
-                
-                <div class="directory-section">
-                    <h4>🏆 机场评测推荐</h4>
-                    <ul>
-                        <li><a href="articles/kuaili-review.html">⚡ 快狸机场深度实测</a></li>
-                        <li><a href="articles/jilianyun-review.html">⚡ 极连云专线实测</a></li>
-                        <li><a href="articles/edgenova-review.html">⚡ edgenova 节点测评</a></li>
-                        <li><a href="articles/sujie-review.html">⚡ 速界机场深度实测</a></li>
-                        <li><a href="articles/guangnian-review.html">⚡ 光年梯实测</a></li>
-                        <li><a href="articles/huanyuyun-review.html">⚡ 寰宇云出海评测</a></li>
-                        <li><a href="articles/kexinyun-review.html">⚡ 可信云多端实测</a></li>
-                    </ul>
-                </div>
-                
-                <div class="directory-section">
-                    <h4>📖 客户端使用教程</h4>
-                    <ul>
-                        <li><a href="articles/clash-verge-guide.html">⚙️ Clash Verge 使用配置</a></li>
-                        <li><a href="articles/shadowrocket-guide.html">⚙️ Shadowrocket (小火箭) 配置</a></li>
-                        <li><a href="articles/sing-box-introduction.html">⚙️ sing-box 客户端入门</a></li>
-                        <li><a href="articles/router-vpn-guide.html">⚙️ OpenWrt 路由器配置指南</a></li>
-                        <li><a href="articles/free-apple-id.html">🔑 免费美区 Apple ID 共享</a></li>
-                    </ul>
-                </div>
-                
-                <div class="directory-section">
-                    <h4>🛡️ 新手避坑与防爆</h4>
-                    <ul>
-                        <li><a href="articles/prevent-running.html">⚠️ 最新跑路名单与征兆汇总</a></li>
-                        <li><a href="articles/naiyun-run-away.html">⚠️ 奈云机场跑路专项警示</a></li>
-                        <li><a href="articles/subscription-security.html">⚠️ 订阅链接泄露安全隐患</a></li>
-                        <li><a href="articles/why-paid-airports.html">💡 为什么付费优于免费VPN</a></li>
-                    </ul>
-                </div>
-                
-                <div class="directory-section">
-                    <h4>📚 网络常识与科普</h4>
-                    <ul>
-                        <li><a href="articles/iplc-iepl-transit.html">🔍 IPLC 与 IEPL 专线解析</a></li>
-                        <li><a href="articles/latency-vs-bandwidth.html">🔍 延迟 vs 带宽：哪个更重要</a></li>
-                        <li><a href="articles/smooth-4k-8k.html">🔍 4K 与 8K 视频播放优化</a></li>
-                        <li><a href="articles/global-vs-rule-mode.html">🔍 全局模式与规则模式区别</a></li>
-                        <li><a href="articles/protocols-comparison.html">🔍 SS 与 Trojan 协议对比</a></li>
-                    </ul>
-                </div>
-
-                <div class="directory-section" style="border-top: 1px solid rgba(0, 150, 199, 0.1); padding-top: 1rem;">
-                    <h4>💼 商务推广合作</h4>
-                    <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem;">如需推广节点服务，请投递合作工单。</p>
-                    <a href="contact.html" class="btn btn-glow btn-sm" style="width: 100%; justify-content: center; padding: 0.5rem;">
-                        商务对接
-                    </a>
-                </div>
-            </div>
-        </aside>
-
-        <!-- 右侧文章列表 -->
+    <div class="layout-wrapper layout-single-column" style="margin-top: 1rem;">
+        <!-- 左侧文章列表 -->
         <main class="main-content">
             <div class="article-grid">
                 
@@ -384,6 +325,28 @@
 
             </div>
         </main>
+
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">⚙️ 常见操作</h3>
+                <ul class="widget-links">
+                    <li><a href="tutorial.html#windows">Windows Clash 配置</a></li>
+                    <li><a href="tutorial.html#macos">macOS 电脑配置</a></li>
+                    <li><a href="tutorial.html#android">Android 手机配置</a></li>
+                    <li><a href="tutorial.html#ios">iOS 小火箭导入</a></li>
+                </ul>
+            </div>
+            
+            <div class="widget cooperation-widget">
+                <h4>💼 商务推广合作</h4>
+                <p>如需推广节点服务，请投递合作工单。</p>
+                <a href="ai-guide.html">AI鎸囧崡</a>
+                <a href="contact.html" class="btn btn-glow btn-sm" style="width: 100%; justify-content: center; padding: 0.5rem;">
+                    商务对接
+                </a>
+            </div>
+        </aside>
     </div>
 
     <!-- 页脚 -->
@@ -401,6 +364,7 @@
                     <a href="index.html">网站首页</a>
                     <a href="tutorial.html">使用教程</a>
                     <a href="articles.html">技术评测</a>
+                    <a href="ai-guide.html">AI鎸囧崡</a>
                 </div>
                 <div class="footer-nav-col">
                     <h4>客户端下载</h4>
@@ -410,6 +374,7 @@
                 </div>
                 <div class="footer-nav-col">
                     <h4>支持与合作</h4>
+                    <a href="ai-guide.html">AI鎸囧崡</a>
                     <a href="contact.html">商务对接</a>
                     <a href="mailto:jielun0227@gmail.com">故障申诉</a>
                 </div>
