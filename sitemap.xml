@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://yzrztop.com/articles.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
@@ -35,6 +35,12 @@
     <lastmod>2026-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yzrztop.com/articles/bianjieyun-review.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://yzrztop.com/articles/clash-verge-guide.html</loc>
@@ -85,6 +91,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://yzrztop.com/articles/jiujiuba-review.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://yzrztop.com/articles/kexinyun-review.html</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -129,6 +141,12 @@
   <url>
     <loc>https://yzrztop.com/articles/shadowrocket-guide.html</loc>
     <lastmod>2026-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yzrztop.com/articles/shanhai-review.html</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
