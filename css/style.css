@@ -1931,3 +1931,89 @@ body::after {
     border-radius: 6px;
     border: 1px solid rgba(0, 150, 199, 0.03);
 }
+
+/* 左侧侧边栏布局 */
+.layout-left-sidebar {
+    grid-template-columns: 280px 1fr !important;
+    max-width: 1300px !important;
+}
+@media (max-width: 1024px) {
+    .layout-left-sidebar {
+        grid-template-columns: 1fr !important;
+    }
+    .left-directory-sidebar {
+        position: static !important;
+        height: auto !important;
+        margin-bottom: 2rem;
+    }
+}
+
+/* 左侧目录侧边栏 */
+.left-directory-sidebar {
+    position: sticky;
+    top: 90px;
+    align-self: start;
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+/* 自定义滚动条 */
+.left-directory-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+.left-directory-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(0, 150, 199, 0.2);
+    border-radius: 4px;
+}
+.directory-widget {
+    background: var(--bg-panel);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+.directory-title {
+    font-family: var(--font-tech);
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 150, 199, 0.15);
+    padding-bottom: 0.5rem;
+}
+.directory-section {
+    margin-bottom: 1.5rem;
+}
+.directory-section:last-child {
+    margin-bottom: 0;
+}
+.directory-section h4 {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.directory-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.directory-section ul li a {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    display: block;
+    line-height: 1.4;
+}
+.directory-section ul li a:hover {
+    color: var(--primary);
+    padding-left: 4px;
+}
+
