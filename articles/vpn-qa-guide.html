@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>科学上网与机场配置常见问题解答 Q&A 避坑指南 - 椰汁网络日志</title>
+    <meta name="description" content="科学上网与机场配置常见问题解答。为您科普翻墙合规与法律注意事项、如何区分VPN与机场、自建梯子与机场对比、如何测试机场翻墙速度以及如何正确选择网络代理协议，助您安全避坑。">
+    <meta name="keywords" content="科学上网Q&A, 机场配置, 翻墙违法吗, 代理协议选择, 机场测速">
+    <meta name="geo.region" content="CN" />
+    <meta name="geo.placename" content="China" />
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .qa-box {
+            background: rgba(0, 150, 199, 0.03);
+            border-left: 4px solid var(--primary);
+            padding: 1.2rem;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+        }
+        .qa-question {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.15rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .qa-answer {
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .legal-notice {
+            background: rgba(239, 68, 68, 0.03);
+            border-left: 4px solid var(--accent-red);
+            padding: 1rem 1.2rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+        .legal-notice h4 {
+            color: var(--accent-red);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        .legal-notice ol {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+        .legal-notice li {
+            margin-bottom: 0.4rem;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid var(--border);
+            padding: 0.8rem;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: rgba(15, 23, 42, 0.03);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../index.html" class="logo">
+                <span>椰汁网络日志</span><div class="logo-dot"></div>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html">网站首页</a>
+                <a href="../ranking.html">机场排行</a>
+                <a href="../tutorial.html">小白教程</a>
+                <a href="../articles.html" class="active">技术评测</a>
+                <a href="../ai-guide.html">AI指南</a>
+                <a href="../contact.html">商务合作</a>
+                <a href="../share-guide.html">账号合租指南</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主布局 -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+            <article class="article-detail-box">
+                <header class="article-header">
+                    <h1>科学上网与机场配置常见问题解答 Q&A 避坑指南</h1>
+                    <div class="article-meta">
+                        <span>📅 发布日期：2026-07-17</span>
+                        <span>🏷️ 分类：科普避坑</span>
+                        <span>👤 作者：椰汁评测组</span>
+                    </div>
+                </header>
+                
+                <section class="article-body">
+                    <p>在日常使用网络和配置加速服务的过程中，不管是新手还是有一定经验的用户，总会遇到各种各样的问题。从法律合规底线，到 VPN 协议的选择，再到自建梯子与商业机场的利弊权衡，信息不对称往往会导致许多人不小心踩坑。本文由椰汁网络日志评测组整理，旨在解答大家在科学上网与机场配置中的核心常见疑问。</p>
+
+                    <div class="qa-box">
+                        <div class="qa-question">
+                            <span>❓</span> 科学上网（翻墙）违法吗？合规边界在哪里？
+                        </div>
+                        <div class="qa-answer">
+                            <p>这是大家最常问的问题。在我国，互联网跨境联网受法律严格管理。<strong>对于个人用户而言，科学上网通常处于“灰色地带”</strong>。只要你不涉及传播政治敏感、谣言、不良信息，并且不倒卖、分发科学上网工具，一般不会被网警关注。换句话说，用于学术科研、外贸办公、娱乐追剧，保持“谨言慎行、低调合法”的原则是安全的。</p>
+                            <p>但请务必注意，互联网并非法外之地，网警依然有技术定位到个人。因此，禁止在国内公共空间（如微信、贴吧、抖音等）分享、宣传、兜售任何翻墙软件或节点链接。</p>
+                            <div class="legal-notice">
+                                <h4>《计算机信息网络国际互联网安全保护管理办法》第五条规定，任何单位和个人不得利用国际联网制作、复制、查阅和传播下列信息：</h4>
+                                <ol>
+                                    <li>煽动抗拒、破坏宪法和法律、行政法规实施的；</li>
+                                    <li>煽动颠覆国家政权，推翻社会主义制度的；</li>
+                                    <li>煽动分裂国家、破坏国家统一的；</li>
+                                    <li>煽动民族仇恨、民族歧视，破坏民族团结的；</li>
+                                    <li>捏造或者歪曲事实，散布谣言，扰乱社会秩序的；</li>
+                                    <li>宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖，教唆犯罪的；</li>
+                                    <li>公然侮辱他人或者捏造事实诽谤他人的；</li>
+                                    <li>损害国家机关信誉的。</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa-box">
+                        <div class="qa-question">
+                            <span>❓</span> 有什么好用的翻墙VPN推荐？VPN和机场有什么区别？
+                        </div>
+                        <div class="qa-answer">
+                            <p>很多新手口中常说的“翻墙VPN”其实是一个广义的俗称。事实上，传统的 VPN 协议（如 OpenVPN, L2TP, PPTP, IPSec）<strong>早已无法在中国大陆正常使用</strong>，因为它们的流量特征非常明显，防火长城（GFW）可以轻易对其进行阻断和封锁。目前（2026年）那些仍然能稳定出海的软件，采用的是专门针对抗封锁研发的<strong>现代混淆代理协议</strong>（如 Shadowsocks, Trojan, VMess, Hysteria 2 等）。</p>
+                            <p><strong>传统的一键式国外VPN（如 ExpressVPN、NordVPN 等）：</strong> 客户端内置，傻瓜式一键连接。但在国内被大量屏蔽，连接连通率低、速度差、价格贵。不建议国内日常主力使用。</p>
+                            <p><strong>网络代理“机场”（主流推荐）：</strong> 机场只提供节点配置文件（订阅链接），不提供独立的客户端。你需要配合第三方客户端（如 Clash Verge、Shadowrocket 等）使用。由于机场部署了国内的 BGP 入口和 IPLC/IEPL 国际专线，在高峰期速度极快，连通性卓越，是目前最主流的翻墙方式。</p>
+                        </div>
+                    </div>
+
+                    <div class="qa-box">
+                        <div class="qa-question">
+                            <span>❓</span> 购买机场梯子 vs 个人自建节点，哪个更好？
+                        </div>
+                        <div class="qa-answer">
+                            <p>简而言之：<strong>追求省心、速度与看视频体验，选机场；追求数据隐私绝对掌控，且具备技术背景，选自建。</strong></p>
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>对比维度</th>
+                                        <th>商业机场梯子</th>
+                                        <th>个人自建节点</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>上手难度</strong></td>
+                                        <td>低（复制订阅导入客户端即可）</td>
+                                        <td>高（需要买 VPS、配置脚本与解析域名）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>高峰网速</strong></td>
+                                        <td>极高（多路 IPLC 专线中转）</td>
+                                        <td>一般（受限于单台服务器公网直连带宽）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>IP 纯净度</strong></td>
+                                        <td>中/低（多人共享同一个出口 IP）</td>
+                                        <td>高（独享 IP，适合关键账号登录）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>维护精力</strong></td>
+                                        <td>无（机场管理员负责线路维护）</td>
+                                        <td>高（IP 被封时需要花钱更换或修复）</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>性价比</strong></td>
+                                        <td>高（几块到十几块即可用几十个节点）</td>
+                                        <td>低（单台 VPS 月供通常在 $3 - $10 以上）</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="qa-box">
+                        <div class="qa-question">
+                            <span>❓</span> 如何正确测试机场的翻墙网速与稳定性？
+                        </div>
+                        <div class="qa-answer">
+                            <p>许多人在客户端里狂点“延迟测试”或“Ping测试”，看到绿色几毫秒就觉得快，这是极其错误的。客户端测得的 Ping 值往往只是你到国内中转入口的延迟，<strong>并不代表你到海外目标网站的真实速度</strong>。</p>
+                            <p>正确的测速方法应该通过以下手段进行：</p>
+                            <ul>
+                                <li><strong>SpeedTest 测速：</strong> 开启代理模式后，访问 Speedtest.net 选择海外测速点。如果可以跑满你的本地宽带，说明机场带宽配置充沛。</li>
+                                <li><strong>YouTube 详细统计信息 (Stats for nerds)：</strong> 在油管视频播放器中选择 4K 或 8K 画质，右键选择“详细统计信息”，查看 <strong>Connection Speed</strong> 指标。通常在 50,000 Kbps 以上即可流畅无缓冲播放 4K 视频。</li>
+                                <li><strong>下载测试：</strong> 在代理开启状态下，尝试通过浏览器或下载工具从 GitHub、Nvidia 等大厂服务器下载一个大文件，观察稳定的下载速度。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="qa-box">
+                        <div class="qa-question">
+                            <span>❓</span> Shadowsocks、Trojan、Vmess、Hysteria 2 这些协议该怎么选？
+                        </div>
+                        <div class="qa-answer">
+                            <p>很多用户在导入订阅时，纠结到底是用 SS 还是用 Trojan 节点。事实上，如果是使用机场，这并没有本质区别，因为<strong>机场的线路优化（是否有专线、BGP中转）对速度起决定性作用，而协议本身的影响非常微弱</strong>。直接选择机场推荐的默认节点组即可。</p>
+                            <p>但如果你是<strong>自建节点</strong>，协议的选择就很重要了：</p>
+                            <ul>
+                                <li><strong>经典 Shadowsocks/VMess：</strong> 特征已能被 GFW 精准识别，若公网直连极易导致 VPS 端口或 IP 被封锁，不建议裸连自建。</li>
+                                <li><strong>Trojan / VLESS Reality：</strong> 模拟正常的 HTTPS 网页流量，是目前最安全的自建伪装方案之一，极难被防火长城主动探测。</li>
+                                <li><strong>Hysteria 2 / TUIC：</strong> 基于 UDP（QUIC）协议开发，具有极强的暴力发包和抗丢包能力，特别适合在本地网络较差、晚高峰公网丢包严重的直连 VPS 上部署，网速提升极大。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </main>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">⚙️ 相关推荐</h3>
+                <ul class="widget-links">
+                    <li><a href="why-paid-airports.html">付费机场与免费网络代理对比</a></li>
+                    <li><a href="protocols-comparison.html">代理协议对比：SS vs Trojan vs VMess</a></li>
+                    <li><a href="prevent-running.html">如何防止机场跑路资金损失？</a></li>
+                    <li><a href="../tutorial.html">客户端配置与订阅导入教程</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="logo">
+                    <span>椰汁网络日志</span><div class="logo-dot"></div>
+                </a>
+                <p>致力于提供2026年最新、最客观的代理服务与机场推荐，普及网络协议常识，帮助用户安全无障碍地浏览全球互联网资源。</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-nav-col">
+                    <h4>快速导航</h4>
+                    <a href="../index.html">网站首页</a>
+                    <a href="../tutorial.html">使用教程</a>
+                    <a href="../articles.html">技术评测</a>
+                    <a href="../ai-guide.html">AI指南</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>客户端下载</h4>
+                    <a href="../tutorial.html#windows">Clash Verge (Win)</a>
+                    <a href="../tutorial.html#macos">Clash Verge (Mac)</a>
+                    <a href="../tutorial.html#android">Clash for Android</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>支持与合作</h4>
+                    <a href="../ai-guide.html">AI指南</a>
+                    <a href="../contact.html">商务对接</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 椰汁网络日志. All Rights Reserved. 推荐节点仅限用于正规跨境科研与外贸办公。</p>
+        </div>
+    </footer>
+
+    <script src="../js/canvas-bg.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
