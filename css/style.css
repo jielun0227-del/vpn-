@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
     /* 科技感配色系统 - 极简亮白风格 */
@@ -21,8 +21,8 @@
     --border-color-purple: rgba(114, 9, 183, 0.12);
     
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-tech: 'Orbitron', sans-serif;
-    --font-code: 'Fira Code', monospace;
+    --font-tech: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-code: monospace;
     
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -62,33 +62,14 @@ body {
     pointer-events: none;
 }
 
-/* 赛博网格底纹 */
+/* 赛博网格底纹禁用 */
 body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        linear-gradient(rgba(0, 150, 199, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 150, 199, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    z-index: -2;
-    pointer-events: none;
+    display: none;
 }
 
-/* 渐变暗影底纹 */
+/* 渐变暗影底纹禁用 */
 body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, transparent 60%, var(--bg-darker) 100%);
-    z-index: -2;
-    pointer-events: none;
+    display: none;
 }
 
 /* 滚动条美化 */
@@ -102,23 +83,21 @@ body::after {
 ::-webkit-scrollbar-thumb {
     background: var(--primary);
     border-radius: 3px;
-    box-shadow: 0 0 8px var(--primary);
 }
 ::-webkit-scrollbar-thumb:hover {
     background: var(--secondary);
-    box-shadow: 0 0 12px var(--secondary);
 }
 
 /* 顶部导航栏 - 玻璃拟态 */
 .header {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03), 0 0 20px rgba(0, 150, 199, 0.03);
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
 }
 
 .nav-container {
@@ -131,15 +110,13 @@ body::after {
 }
 
 .logo {
-    font-family: var(--font-tech);
-    font-size: 1.6rem;
-    font-weight: 900;
+    font-family: var(--font-sans);
+    font-size: 1.4rem;
+    font-weight: 700;
     color: var(--text-primary);
-    letter-spacing: 1.5px;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    text-transform: uppercase;
     text-decoration: none;
 }
 
@@ -150,13 +127,11 @@ body::after {
 }
 
 .logo-dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background-color: var(--primary);
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--primary);
     display: inline-block;
-    animation: pulse-glow 2s infinite;
 }
 
 .nav-menu {
@@ -177,7 +152,6 @@ body::after {
 
 .nav-menu a:hover, .nav-menu a.active {
     color: var(--primary);
-    text-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
 }
 
 .nav-menu a::after {
@@ -189,7 +163,6 @@ body::after {
     height: 2px;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     transition: var(--transition-normal);
-    box-shadow: 0 0 8px var(--primary);
 }
 
 .nav-menu a:hover::after, .nav-menu a.active::after {
@@ -293,15 +266,15 @@ body::after {
 
 .btn-glow {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--bg-darker);
+    color: #ffffff;
     border: none;
-    box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
-    font-weight: 700;
+    box-shadow: 0 4px 6px -1px rgba(0, 150, 199, 0.1), 0 2px 4px -1px rgba(0, 150, 199, 0.06);
+    font-weight: 600;
 }
 
 .btn-glow:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(0, 242, 254, 0.7), 0 0 15px rgba(168, 85, 247, 0.5);
+    box-shadow: 0 10px 15px -3px rgba(0, 150, 199, 0.15), 0 4px 6px -2px rgba(0, 150, 199, 0.1);
     color: #ffffff;
 }
 
@@ -309,12 +282,10 @@ body::after {
     background: transparent;
     color: var(--primary);
     border: 1px solid var(--primary);
-    box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
 }
 
 .btn-outline:hover {
-    background: rgba(0, 242, 254, 0.1);
-    box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+    background: rgba(0, 150, 199, 0.05);
     transform: translateY(-2px);
 }
 
@@ -355,21 +326,20 @@ body::after {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
 }
 
 .filter-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
     padding-bottom: 0.75rem;
 }
 
 .filter-header h3 {
-    font-family: var(--font-tech);
+    font-family: var(--font-sans);
     font-size: 1.1rem;
-    letter-spacing: 1px;
     color: var(--primary);
 }
 
@@ -388,8 +358,6 @@ body::after {
 .filter-group label {
     font-size: 0.8rem;
     color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .search-input-wrap {
@@ -398,8 +366,8 @@ body::after {
 
 .search-input-wrap input, .filter-group select {
     width: 100%;
-    background: rgba(2, 4, 10, 0.6);
-    border: 1px solid var(--border-color);
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.1);
     padding: 0.75rem 1rem;
     border-radius: 8px;
     color: var(--text-primary);
@@ -411,7 +379,7 @@ body::after {
 
 .search-input-wrap input:focus, .filter-group select:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+    box-shadow: 0 0 0 3px rgba(0, 150, 199, 0.1);
 }
 
 /* 分区标题 */
@@ -480,26 +448,15 @@ body::after {
     box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
 }
 
-/* 边框发光粒子特效 */
+/* 边框发光粒子特效禁用 */
 .card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
-    transition: var(--transition-slow);
-}
-
-.card:hover::before {
-    left: 100%;
+    display: none;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: rgba(0, 242, 254, 0.4);
-    box-shadow: 0 12px 40px rgba(0, 242, 254, 0.15);
+    border-color: rgba(0, 150, 199, 0.25);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
 }
 
 .card-header {
@@ -2015,5 +1972,14 @@ body::after {
 .directory-section ul li a:hover {
     color: var(--primary);
     padding-left: 4px;
+}
+
+/* De-AI Optimization Rules */
+.footer-tech-info {
+    display: none !important;
+}
+
+.network-monitor-section {
+    display: none !important;
 }
 
