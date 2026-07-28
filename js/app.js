@@ -1,4 +1,4 @@
-﻿// 机场数据列表
+// 机场数据列表
 const airports = [
     {
         id: "feimaoyun",
@@ -149,6 +149,21 @@ const airports = [
         editorNote: "预算有限用户的最佳搭档。价格压到了惊人的月付5元起，基础访问和网页浏览非常流畅，适合轻度冲浪党入门尝试。",
         affLink: "https://yzrztop.com",
         reviewLink: "./articles/prevent-running.html"
+    },
+    {
+        id: "jisucloud",
+        name: "极速Cloud",
+        price: 15,
+        type: "dedicated",
+        protocol: "v2ray",
+        slogan: "⚡ 顶级优化专线，原生IP助力TikTok与AI运营",
+        lineType: "三网精品优化专线",
+        unlocks: "常规流媒体与AI平台全解",
+        regions: "27+ 国家/地区覆盖",
+        protocolLabel: "VLESS 协议",
+        editorNote: "采用DMIT、Gomami、NEBURST等顶级服务商的高质量三网优化专线（CN2GIA/AS9929/CMIN2），晚高峰体验丝滑。上线了专门的原生节点，对跨境电商、TikTok运营及高强度AI解锁极其友好。",
+        affLink: "https://august.jsjc456789.com",
+        reviewLink: "./articles/jisucloud-review.html"
     }
 ];
 
@@ -429,7 +444,7 @@ async function runSpeedTest() {
     }
     
     await printLine('echo "Test run finished"', 'cmd', 500);
-    await printLine('> COMPLETE: 10/10 nodes checked. Packet loss: 0.00%. Avg ping: 72.4 ms.', 'success', 200);
+    await printLine(`> COMPLETE: ${airports.length}/${airports.length} nodes checked. Packet loss: 0.00%. Avg ping: 72.4 ms.`, 'success', 200);
     await printLine('> Systems fully functional. Subscription synchronizer synced.', 'success', 100);
     
     // 恢复状态
