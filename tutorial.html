@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,59 @@
     <meta name="geo.region" content="CN" />
     <meta name="geo.placename" content="China" />
     <link rel="stylesheet" href="css/style.css">
+    <!-- JSON-LD Structured Data for SEO & GEO -->
+    <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "url":  "https://yzrztop.com/tutorial.html",
+                       "description":  "椰汁网络日志网络加速小白使用教程与常见问题知识库。包含Windows、macOS、Android和iOS系统下Clash Verge与Shadowrocket客户端的下载、配置订阅与分流模式选择指南，助您秒速上手科学上网。",
+                       "@type":  "WebSite",
+                       "name":  "椰汁网络日志",
+                       "inLanguage":  "zh-CN",
+                       "@id":  "https://yzrztop.com/tutorial.html#website"
+                   },
+                   {
+                       "mainEntity":  [
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "这是因为您错误地开启了【全局模式 (Global)】。在全局模式下，您访问国内网站的请求也会发送至机场节点，再由节点绕回国内，这会导致延迟急剧增加。 解决方案： 请将客户端的路由模式切换为【规则模式 (Rule)】或【配置 (Config)】，分流规则会自动识别国内域名和IP，使其不需要绕行国外节点，保证国内软件满速运行。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "连上客户端后，为什么微信、淘宝等国内软件很慢或者完全打不开？",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "这通常由以下三个原因导致： ① 订阅链接未被正确激活：部分机场购买套餐后可能需要等待数分钟以配置服务器节点；或者您的套餐已经过期或流量超支。 ② 复制了错误的链接格式：比如将 V2ray 的订阅格式强行导入到 Clash 中。请确认你在机场后台点击的是“Clash 订阅”字样的复制按钮。 ③ 网络拥堵或被运营商阻断：您可以尝试暂时断开本地 WiFi 切换为手机热点，或者开启已有的其他代理再行下载更新订阅。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "导入订阅链接时提示 \"Invalid Config\"、\"500 Internal Error\" 或解析失败？",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "这是机场的流量计费倍率。它决定了你实际消耗的套餐流量： • 0.1x 倍率：你用了 10GB 流量，机场只扣除 1GB 的额度，适合重度下载或看长视频。 • 1.0x 倍率：标准计费，用多少扣多少，为大部分常规节点。 • 2.0x / 5.0x 倍率：通常是顶级 IEPL 游戏专线节点，由于专线带宽极其昂贵，使用该节点消耗的流量额度会翻倍。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "节点后面的 1x、2x、0.1x 究竟是什么含义？我该怎么选？",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "传统的“系统代理”仅对支持系统代理解析的浏览器和聊天工具起效。而TUN 模式会在系统底层安装一个虚拟网卡，将整个操作系统所有的网络流量（包含命令终端、某些特定主机游戏、UWP应用如微软商店等）强行拉入 Clash 的解析规则中。 如果你需要进行终端开发（Git / Docker 拉取镜像），或者需要游玩某些必须要外网登录的主机和单机游戏，建议开启客户端中的 【TUN 模式 (TUN Mode)】。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "什么是 TUN 模式？我们在什么情况下需要开启它？",
+                                              "@type":  "Question"
+                                          }
+                                      ],
+                       "@type":  "FAQPage"
+                   }
+               ]
+}
+    </script>
 </head>
 <body>
 

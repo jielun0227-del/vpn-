@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,80 @@
     <meta name="geo.region" content="CN" />
     <meta name="geo.placename" content="China" />
     <link rel="stylesheet" href="../css/style.css">
+    <!-- JSON-LD Structured Data for SEO & GEO -->
+    <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "inLanguage":  "zh-CN",
+                       "datePublished":  "2026-05-29",
+                       "description":  "揭示网络提速过程中的一大认识误区：Ping延迟数值并不决定下载速度上限。通俗分析带宽、物理延迟以及丢包率的三角博弈，教您如何看懂机场测速日志。",
+                       "@type":  "BlogPosting",
+                       "headline":  "延迟低就等于网速快吗？谈谈网络延迟、带宽与丢包率的关系",
+                       "author":  {
+                                      "name":  "椰汁评测组",
+                                      "@type":  "Person"
+                                  },
+                       "mainEntityOfPage":  "https://yzrztop.com/articles/latency-vs-bandwidth.html",
+                       "publisher":  {
+                                         "name":  "椰汁网络日志",
+                                         "logo":  {
+                                                      "@type":  "ImageObject",
+                                                      "url":  "https://yzrztop.com/favicon.ico"
+                                                  },
+                                         "@type":  "Organization"
+                                     },
+                       "@id":  "https://yzrztop.com/articles/latency-vs-bandwidth.html#article"
+                   },
+                   {
+                       "mainEntity":  [
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "为了让所有人看懂，我们可以把网络连接想象成一个水力输送系统，你的本地电脑是水槽，海外的网页服务器是水源： 网络带宽 (Bandwidth)： 相当于**“水管的粗细”**。水管越粗，同一秒钟内能够流过去的水（数据包）就越多。比如 500Mbps 宽带就是一根极粗的水管，能支撑你同时下载几个 G 的大文件。 网络延迟 (Latency / Ping)： 相当于**“水滴从水源流到你水槽所花费的时间”**。即使水管再粗，如果水源距离你十万八千里，水滴在管子跑一趟也要耗时（光在光纤里的传输是有物理速度限制的）。从中国到美国的物理延迟极限通常在 120ms 以上，这是无法被超越的物理定律。 丢包率 (Packet Loss)： 相当于**“水管上的漏洞率”**。如果你的水管在运输中漏水了，流出去 1...",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "一、通俗的水管比喻：分清三大指标",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "很多公网中转机场或者直连服务器，虽然测出来的 Ping 值（延迟）只有十几毫秒。但由于晚高峰期间主干网拥堵，产生了高达 10% 以上的丢包率。 网络数据传输主要是基于 TCP 协议的。TCP 协议有一个“确认重传”机制：当发送端发现丢了一个数据包时，必须立刻停下所有后续传输，重新补发这个包，直到确认接收到为止。 这意味着，即使你的延迟非常低，一旦开始丢包，你的网络通道就会频繁处于“停下等待补发”的死锁状态。此时，你会觉得网页卡死，打不开，视频完全卡住。因此，决定网络流畅度的第一杀手不是延迟，而是丢包率。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "二、为什么 20ms 的延迟，网速依然会卡成 PPT？",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "与此相对，很多高端机场的美国 IPLC 专线或者智能直连，由于线路质量极高，在晚高峰也能做到 0% 的丢包率。虽然因为物理跨度太远，延迟有 150ms，但因为水管上没有任何漏洞，数据包像连珠炮一样源源不断且不间断地塞进你的电脑里，配合浏览器强大的“预缓冲”功能，你看视频就会觉得一滑到底，毫无卡顿。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "三、为什么 150ms 的美国节点，看 4K 视频非常丝滑？",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "玩电竞联机游戏： 核心追求是**“极低延迟与0丢包”**。因为游戏需要极高的实时反应能力，必须选用近距离的香港、日本 IPLC 专线（如飞猫云、光速云的专属游戏线）。 看 Netflix 电影与大文件下载： 核心追求是**“大带宽与0丢包”**，对延迟要求不高。选用大带宽的新加坡、美国节点即可，哪怕测延迟有一百多毫秒也完全不影响观看。 拒绝垃圾机场： 如果一个机场价格便宜但晚上丢包严重，哪怕列表延迟测出来再漂亮，也只是一张糊弄新手的“假成绩单”。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "给用户的实践指南",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "致力于提供2026年最新、最客观的代理服务与机场推荐，普及网络协议常识，帮助用户安全无障碍地浏览全球互联网资源。 \u0026copy; 2026 椰汁网络日志. All Rights Reserved. 推荐节点仅限用于正规跨境科研与外贸办公。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "️ 相关推荐",
+                                              "@type":  "Question"
+                                          }
+                                      ],
+                       "@type":  "FAQPage"
+                   }
+               ]
+}
+    </script>
 </head>
 <body>
 

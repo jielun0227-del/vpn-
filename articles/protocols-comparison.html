@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,88 @@
     <meta name="geo.region" content="CN" />
     <meta name="geo.placename" content="China" />
     <link rel="stylesheet" href="../css/style.css">
+    <!-- JSON-LD Structured Data for SEO & GEO -->
+    <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "inLanguage":  "zh-CN",
+                       "datePublished":  "2026-06-20",
+                       "description":  "对比分析Shadowsocks(SS)、Trojan、VMess/VLESS协议以及新兴的Hysteria2协议在安全混淆、传输速率、防封锁性能方面的强弱，帮助您选择正确的网络协议。",
+                       "@type":  "BlogPosting",
+                       "headline":  "常用网络协议大比拼：Shadowsocks, Trojan, VMess 怎么选？",
+                       "author":  {
+                                      "name":  "椰汁评测组",
+                                      "@type":  "Person"
+                                  },
+                       "mainEntityOfPage":  "https://yzrztop.com/articles/protocols-comparison.html",
+                       "publisher":  {
+                                         "name":  "椰汁网络日志",
+                                         "logo":  {
+                                                      "@type":  "ImageObject",
+                                                      "url":  "https://yzrztop.com/favicon.ico"
+                                                  },
+                                         "@type":  "Organization"
+                                     },
+                       "@id":  "https://yzrztop.com/articles/protocols-comparison.html#article"
+                   },
+                   {
+                       "mainEntity":  [
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "Shadowsocks 诞生时间较早，它主要是通过对称加密算法将流量打包混淆，让流量在公网上呈现为毫无规律的乱码。 优点： 协议极为轻量、加密速度极快、内存和 CPU 资源占用微乎其微。正因为此，它依然是很多高性能专线中转机以及低功耗路由器挂载节点的第一选择。 缺点： 由于它产生的乱码是不具有任何正常网络交互行为的特征的，在面对现代深度包检测（DPI）时，极容易因为“特征过于怪异”而被识别阻断。在普通直连公网中极难生存。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "Shadowsocks (简称 SS)：老牌经典的轻量速度王者",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "Trojan（特洛伊木马）协议采取了完全相反的防封锁逻辑。它放弃了生成怪异乱码，而是完全模仿目前世界上最普遍、最合法的流量——HTTPS（我们访问淘宝、网银时所使用的标准加密协议）。 当防火墙对 Trojan 流量进行探测时，服务器会返回一个完全正常的静态 HTML 网页（你可以自定义为旅游网、代码库等）。只有在客户端提供了正确的密码密钥时，Trojan 才会把底层真正的代理流量接通。 因为全世界 90% 的合法网站都在使用 HTTPS，检测机制无法区分正常的 HTTPS 访问与 Trojan 加密访问，所以 Trojan 具有极高的防封锁和存活率。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "Trojan：完美伪装成 HTTPS 网站的特工",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "VMess 协议由 V2Ray 平台推出，它使用了非常复杂的时钟鉴权和多重混淆技术。而 VLESS 则是 VMess 的轻量级改良版，剔除了鉴权中繁琐的 CPU 运算，支持搭载 XTLS 这一高性能传输协议。 这类协议最大的特点是高度的定制化。你可以选择其底层承载方式（如 TCP、WebSocket、gRPC），并且可以通过 CDN 节点进行中转，被称为网络阻断严重时期的“终极重装装甲”。但缺点是配置稍微复杂，且不适合游戏等超低延迟场景。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "VMess / VLESS (V2ray的核心)：多重混淆的“重甲坦克”",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "传统的协议几乎都基于 TCP 传输。当网络环境极度恶劣（如晚高峰丢包率高）时，TCP 会因为重传机制导致网络直接卡死。而 Hysteria 2 和 TUIC 则是基于 QUIC (UDP) 协议开发的。 即使在丢包率高达 30% 的极差宽带环境下，它们也能像爆速跑车一样强行冲开通路，跑满你的本地宽带，是近两年来新兴的高速协议。缺点是部分地区的运营商会恶意封锁 UDP 流量。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "Hysteria 2 / TUIC：基于 UDP 协议的“爆速超跑”",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "如果在高端 IEPL/IPLC 专线机场下： 优先选择 Shadowsocks 或 Trojan。因为专线不经过公网检测，SS 的轻量特性可以带给你极致的低延迟体验。 如果在恶劣或敏感时期的公网直连下： 优先使用 Trojan 或 VLESS。 如果宽带丢包严重、晚高峰速度极慢： 尝试选用 Hysteria 2，会有意想不到的突破性体验。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "总结：用户日常该如何挑选协议？",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "什么是 IPLC/IEPL 专线？ 致力于提供2026年最新、最客观的代理服务与机场推荐，普及网络协议常识，帮助用户安全无障碍地浏览全球互联网资源。 \u0026copy; 2026 椰汁网络日志. All Rights Reserved. 推荐节点仅限用于正规跨境科研与外贸办公。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "️ 相关推荐",
+                                              "@type":  "Question"
+                                          }
+                                      ],
+                       "@type":  "FAQPage"
+                   }
+               ]
+}
+    </script>
 </head>
 <body>
 

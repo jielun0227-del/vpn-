@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,80 @@
     <meta name="geo.region" content="CN" />
     <meta name="geo.placename" content="China" />
     <link rel="stylesheet" href="../css/style.css">
+    <!-- JSON-LD Structured Data for SEO & GEO -->
+    <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "inLanguage":  "zh-CN",
+                       "datePublished":  "2026-05-25",
+                       "description":  "详细讲解代理客户端中全局模式（Global）、规则模式（Rule）与直连模式（Direct）的工作机理与差异。避免国内流量误走代理导致账号封禁，节约套餐流量。",
+                       "@type":  "BlogPosting",
+                       "headline":  "全局模式、规则模式与直连模式有什么区别？",
+                       "author":  {
+                                      "name":  "椰汁评测组",
+                                      "@type":  "Person"
+                                  },
+                       "mainEntityOfPage":  "https://yzrztop.com/articles/global-vs-rule-mode.html",
+                       "publisher":  {
+                                         "name":  "椰汁网络日志",
+                                         "logo":  {
+                                                      "@type":  "ImageObject",
+                                                      "url":  "https://yzrztop.com/favicon.ico"
+                                                  },
+                                         "@type":  "Organization"
+                                     },
+                       "@id":  "https://yzrztop.com/articles/global-vs-rule-mode.html#article"
+                   },
+                   {
+                       "mainEntity":  [
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "这是现代加速网络客户端能够提供给用户最智能的路由方案。在该模式下，当你在浏览器或者软件里发起网络访问请求时，客户端会通过后台加载的**规则分流列表（如配置文件中的 Rules 或 GeoIP 库）**对该请求进行毫秒级的诊断过滤： 国内域名与IP（如百度、淘宝、微信、Bilibili等）： 会被规则强制标记为**“DIRECT (直连)”**。这意味着数据包不经过机场节点，直接通过本地宽带发送，速度最快，而且完全不扣除你机场的套餐流量额度。 国外域名与IP（如Google、YouTube、Github等）： 会被规则拦截并标记为走代理，自动匹配并发送到你所点选的机场节点（如香港、日本）中转出海。 通过这种策略，你实现了“国内国外两不误”，微信语音不卡顿，YouTube 4K 流畅看，是日常使...",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "一、规则模式 (Rule / 智能分流，强烈推荐)",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "开启全局模式后，客户端会关掉所有内置的分流过滤规则。你这台设备产生的所有流量，不管是访问谷歌，还是访问国内的爱奇艺，都会毫无例外地强行塞进你点选的海外机场节点中。 全局模式危害提示： 许多国内网银、微信具有反洗钱及反欺诈机制。如果微信检测到你正在用香港或美国的代理 IP 频繁登录，可能会触发异常锁定；同时，国内爱奇艺、腾讯视频也会因为你的 IP 在国外而提示“您所在的地区暂无播放版权”。 何时使用全局模式？ 仅当某些非常罕见的国外技术网站没有被分流规则收录，你在“规则模式”下打不开，才需要临时手动切为“全局模式”。访问完毕后请务必立刻切换回规则模式。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "二、全局模式 (Global / 强行全部出海)",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "在直连模式下，客户端退化为纯静态运行。所有的访问流量，无论是国内还是国外，都不会经过你购买的机场节点，全部以你本地纯宽带 IP 直连出去。这相当于在本地临时“关闭”了代理服务，但保留了客户端的运行后台，方便你随时开启。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "三、直连模式 (Direct / 纯物理宽带)",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "有一些小白用户在发现自己“上不去网”时，第一反应是觉得机场节点挂了，于是去把模式切换为“全局”或者“直连”，结果反而把原本正常分流的网络越调越乱。 记住一个铁律：只要配置无误，日常使用 100% 选用“规则模式（Rule）”即可。 遇到节点连不上，应该去代理列表里更换一个亮起绿字的在线节点，而不是去更改系统分流模式。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "核心避坑技巧？",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "Clash Verge 使用指南 致力于提供2026年最新、最客观的代理服务与机场推荐，普及网络协议常识，帮助用户安全无障碍地浏览全球互联网资源。 \u0026copy; 2026 椰汁网络日志. All Rights Reserved. 推荐节点仅限用于正规跨境科研与外贸办公。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "️ 相关推荐",
+                                              "@type":  "Question"
+                                          }
+                                      ],
+                       "@type":  "FAQPage"
+                   }
+               ]
+}
+    </script>
 </head>
 <body>
 

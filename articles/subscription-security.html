@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,72 @@
     <meta name="geo.region" content="CN" />
     <meta name="geo.placename" content="China" />
     <link rel="stylesheet" href="../css/style.css">
+    <!-- JSON-LD Structured Data for SEO & GEO -->
+    <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "inLanguage":  "zh-CN",
+                       "datePublished":  "2026-06-08",
+                       "description":  "订阅链接内含核心密钥，泄露会导致套餐流量被盗刷。揭秘野鸡订阅转换器的抓取后门陷阱，介绍如何使用本地订阅转换、安全重置订阅链接的实操指南。",
+                       "@type":  "BlogPosting",
+                       "headline":  "如何防止你的机场订阅地址泄露？",
+                       "author":  {
+                                      "name":  "椰汁评测组",
+                                      "@type":  "Person"
+                                  },
+                       "mainEntityOfPage":  "https://yzrztop.com/articles/subscription-security.html",
+                       "publisher":  {
+                                         "name":  "椰汁网络日志",
+                                         "logo":  {
+                                                      "@type":  "ImageObject",
+                                                      "url":  "https://yzrztop.com/favicon.ico"
+                                                  },
+                                         "@type":  "Organization"
+                                     },
+                       "@id":  "https://yzrztop.com/articles/subscription-security.html#article"
+                   },
+                   {
+                       "mainEntity":  [
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "很多新手会把自己的订阅链接随手发在公共 Telegram 群里寻求技术支持，或者将其贴到公共论坛上。这相当于直接把钥匙送给黑客： 套餐流量被恶意盗刷： 得到链接的任何人都可以立刻将其导入自己的设备，共享你的月度额度。通常当你发现网页卡顿、流量耗尽时，才在后台看到有数个陌生 IP 正在狂挂 BT 下载。 节点被强力拉黑或封禁： 如果多台设备在不同的城市和运营商下同时使用同一个订阅链接，很多机场的安全规则会自动检测到“IP异地多开”，为了防止恶意共享会直接对你的账号进行永久封号（不予退款）。 用户上网隐私暴露： 某些极特殊的订阅配置里可能附带你所绑定邮箱的混淆标识，黑客通过逆向订阅内容，可以与网络上的社工库匹配，获取你的真实身份隐私。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "一、订阅链接泄露有哪些严重的后果？",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "由于有些客户端只支持特定格式（例如 Shadowsocks 客户端不支持直入 Clash 配置），很多用户会选择使用网上的**“在线订阅转换器”**网站（如 Subconverter Web Interface）。 将你原本安全的订阅链接，直接粘贴进这些不知名、无备案的免费转换网站的输入框中，你的订阅链接就已经被存储在他们的服务器数据库中了。一些居心不良的转换器站长会在后台运行“爬虫脚本”，自动收集并筛选流量大、额度多、线路高级的专线订阅链接，将其打包二次出售或者自己使用。 防雷金律： 尽量避免使用非官方、不知名的第三方订阅转换网站。若必须使用，请选择大厂提供的开源托管站，或者学习如何在本地部署 Subconverter 容器进行无痕转换。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "二、警惕“订阅转换器”的蜜罐后门陷阱",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "绝不将订阅链接填入任何公共在线测试、转换或托管工具。 如果不慎泄露，立刻去机场后台点击【重置订阅（Reset Token）】。 重置后，旧的订阅链接将彻底失效，黑客便无法继续使用你的节点。随后你需要在本地客户端中删除旧配置，导入最新生成的订阅地址。 合理配置客户端的密码锁。 在多人共用的电脑或手机上，为你的 Clash 或 Shadowrocket 设置启动密码，防止他人在借用你设备时通过扫码或者复制配置直接提取出你的订阅内容。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "三、订阅链接防泄漏“三步走”实操",
+                                              "@type":  "Question"
+                                          },
+                                          {
+                                              "acceptedAnswer":  {
+                                                                     "text":  "致力于提供2026年最新、最客观的代理服务与机场推荐，普及网络协议常识，帮助用户安全无障碍地浏览全球互联网资源。 \u0026copy; 2026 椰汁网络日志. All Rights Reserved. 推荐节点仅限用于正规跨境科研与外贸办公。",
+                                                                     "@type":  "Answer"
+                                                                 },
+                                              "name":  "️ 相关推荐",
+                                              "@type":  "Question"
+                                          }
+                                      ],
+                       "@type":  "FAQPage"
+                   }
+               ]
+}
+    </script>
 </head>
 <body>
 
