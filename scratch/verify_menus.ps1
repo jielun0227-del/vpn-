@@ -62,8 +62,10 @@ foreach ($fileObj in $articleFiles) {
     }
 }
 
+$totalChecked = $rootFiles.Count + $articleFiles.Count
+
 if ($allOk) {
-    Write-Output "SUCCESS: All 32 pages successfully verified! Navigation menus are perfectly clean, duplicate-free, and aligned."
+    Write-Output "SUCCESS: All $totalChecked pages successfully verified! Navigation menus are perfectly clean, duplicate-free, and aligned."
 } else {
     Write-Output "FAILED: Menu structure validation failed. Please inspect errors above."
 }
