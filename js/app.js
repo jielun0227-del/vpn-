@@ -132,7 +132,7 @@ const airports = [
         regions: "晚高峰万兆带宽直达",
         protocolLabel: "Hysteria 2 / Trojan",
         editorNote: "率先支持 Hysteria 2 下一代协议，结合顶级专线，拥有无与伦比的爆速体验和抗干扰能力，突破各种极端封锁环境。",
-        affLink: "https://solmira.sujiestttt.xyz/#/register?code=ysM6ozIh",
+        affLink: "https://lqy001.speedworldaff.com/#/?code=ysM6ozIh",
         reviewLink: "./articles/sujie-review.html"
     },
     {
