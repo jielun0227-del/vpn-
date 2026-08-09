@@ -195,9 +195,86 @@
             <div class="widget cooperation-widget">
                 <h4>💼 申请加入排行</h4>
                 <p>若您是加速服务运营方，希望对您的连接性能进行测速并展示在排行榜中？</p>
-<a href="contact.html" class="btn btn-glow btn-sm" style="width: 100%; justify-content: center; padding: 0.5rem;">
+                <a href="contact.html" class="btn btn-glow btn-sm" style="width: 100%; justify-content: center; padding: 0.5rem;">
                     商务对接
                 </a>
+            </div>
+
+            <!-- 侧边栏专属优惠码排行板块 -->
+            <div class="widget promo-sidebar-widget">
+                <div class="widget-header-flex" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.85rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.6rem;">
+                    <h3 class="widget-title" style="margin-bottom: 0; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; color: var(--text-primary);">
+                        <span>🎁</span> 独家专属优惠码
+                    </h3>
+                    <span style="font-size: 0.7rem; color: var(--primary); background: rgba(0, 242, 254, 0.1); padding: 0.15rem 0.4rem; border-radius: 4px; font-weight: 600;">点击复制</span>
+                </div>
+                <div class="sidebar-promo-list" style="display: flex; flex-direction: column; gap: 0.65rem;">
+                    <div class="sidebar-promo-item" style="display: flex; align-items: center; justify-content: space-between; padding: 0.55rem 0.75rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; transition: all 0.2s ease;">
+                        <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                            <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">⚡ edgenova</span>
+                            <span style="font-size: 0.7rem; color: var(--text-muted);">边缘节点全场 8 折</span>
+                        </div>
+                        <button class="promo-copy-btn" onclick="copyPromoCode('xk808', 'edgenova')" style="background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.15)); border: 1px dashed rgba(0, 242, 254, 0.5); color: #00f2fe; font-family: var(--font-tech, monospace); font-weight: 700; font-size: 0.8rem; padding: 0.25rem 0.55rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.25rem; transition: all 0.2s ease;">
+                            <span>xk808</span>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="sidebar-promo-item" style="display: flex; align-items: center; justify-content: space-between; padding: 0.55rem 0.75rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; transition: all 0.2s ease;">
+                        <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                            <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">🐱 快狸机场</span>
+                            <span style="font-size: 0.7rem; color: var(--text-muted);">IEPL 专线特惠</span>
+                        </div>
+                        <button class="promo-copy-btn" onclick="copyPromoCode('kl888', '快狸机场')" style="background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.15)); border: 1px dashed rgba(0, 242, 254, 0.5); color: #00f2fe; font-family: var(--font-tech, monospace); font-weight: 700; font-size: 0.8rem; padding: 0.25rem 0.55rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.25rem; transition: all 0.2s ease;">
+                            <span>kl888</span>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="sidebar-promo-item" style="display: flex; align-items: center; justify-content: space-between; padding: 0.55rem 0.75rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; transition: all 0.2s ease;">
+                        <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                            <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">🚀 速界机场</span>
+                            <span style="font-size: 0.7rem; color: var(--text-muted);">Hysteria2 爆速专线</span>
+                        </div>
+                        <button class="promo-copy-btn" onclick="copyPromoCode('sujie888', '速界机场')" style="background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.15)); border: 1px dashed rgba(0, 242, 254, 0.5); color: #00f2fe; font-family: var(--font-tech, monospace); font-weight: 700; font-size: 0.8rem; padding: 0.25rem 0.55rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.25rem; transition: all 0.2s ease;">
+                            <span>sujie888</span>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="sidebar-promo-item" style="display: flex; align-items: center; justify-content: space-between; padding: 0.55rem 0.75rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; transition: all 0.2s ease;">
+                        <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                            <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">🔗 极连云</span>
+                            <span style="font-size: 0.7rem; color: var(--text-muted);">BGP 多线高性价比</span>
+                        </div>
+                        <button class="promo-copy-btn" onclick="copyPromoCode('jly888', '极连云')" style="background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.15)); border: 1px dashed rgba(0, 242, 254, 0.5); color: #00f2fe; font-family: var(--font-tech, monospace); font-weight: 700; font-size: 0.8rem; padding: 0.25rem 0.55rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.25rem; transition: all 0.2s ease;">
+                            <span>jly888</span>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="sidebar-promo-item" style="display: flex; align-items: center; justify-content: space-between; padding: 0.55rem 0.75rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; transition: all 0.2s ease;">
+                        <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                            <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">☁️ 云图机场</span>
+                            <span style="font-size: 0.7rem; color: var(--text-muted);">新用户首购折扣</span>
+                        </div>
+                        <button class="promo-copy-btn" onclick="copyPromoCode('yt88', '云图机场')" style="background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.15)); border: 1px dashed rgba(0, 242, 254, 0.5); color: #00f2fe; font-family: var(--font-tech, monospace); font-weight: 700; font-size: 0.8rem; padding: 0.25rem 0.55rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.25rem; transition: all 0.2s ease;">
+                            <span>yt88</span>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="sidebar-promo-item" style="display: flex; align-items: center; justify-content: space-between; padding: 0.55rem 0.75rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; transition: all 0.2s ease;">
+                        <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                            <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">⚡ 闪跃机场</span>
+                            <span style="font-size: 0.7rem; color: var(--text-muted);">极速月付体验</span>
+                        </div>
+                        <button class="promo-copy-btn" onclick="copyPromoCode('shanyue', '闪跃机场')" style="background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.15)); border: 1px dashed rgba(0, 242, 254, 0.5); color: #00f2fe; font-family: var(--font-tech, monospace); font-weight: 700; font-size: 0.8rem; padding: 0.25rem 0.55rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.25rem; transition: all 0.2s ease;">
+                            <span>shanyue</span>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </aside>
     </div>
