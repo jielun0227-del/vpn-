@@ -597,18 +597,152 @@
         <!-- 侧边栏 -->
         <aside class="sidebar">
             <div class="widget">
-                <h3 class="widget-title">📚 文章技术目录</h3>
-                <ul class="widget-links">
-                    <li><a href="articles/airport-node-timeout-troubleshooting-2026.html" style="font-weight: 600; color: var(--primary);">🚨 节点全 Timeout 超时排障白皮书</a></li>
-                    <li><a href="articles/2026-airport-ranking.html">🏆 2026年机场排行榜与硬核测评</a></li>
-                    <li><a href="articles/shadowrocket-node-timeout-config-invalid-slow-2026.html">📱 iOS 小火箭节点超时与失效排错</a></li>
-                    <li><a href="articles/chatgpt-recharge-guide.html">💳 国内升级 ChatGPT Plus/Pro 指南</a></li>
-                    <li><a href="articles/kuaili-review.html">⚡ 快狸机场 IEPL 专线深度实测</a></li>
-                    <li><a href="articles/yuntu-review.html">☁️ 云图机场 BGP 极速中转评测</a></li>
-                    <li><a href="articles/douyin-live-gift-thanks-assistant.html">🎥 抖音直播礼物自动感谢助手</a></li>
-                    <li><a href="articles/iplc-iepl-transit.html">🔬 原理解析：IPLC/IEPL与中转对比</a></li>
-                    <li><a href="articles/prevent-running.html">🛡️ 机场防跑路与避坑指南</a></li>
-                </ul>
+                <h3 class="widget-title" style="display: flex; align-items: center; justify-content: space-between;">
+                    <span>📖 全部文章目录</span>
+                    <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: normal;">按发布日期排序</span>
+                </h3>
+                <ol class="hot-articles-list" style="max-height: 800px; overflow-y: auto; padding-right: 5px;">
+                    <li class="hot-article-item">
+                        <span class="hot-number rank-1">1</span>
+                        <a href="articles/airport-node-timeout-troubleshooting-2026.html" class="hot-article-link" title="机场节点全 Timeout 怎么办？2026节点全红与订阅失效排查">机场节点全 Timeout 怎么办？排查指南</a>
+                        <span class="hot-views">08-11</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number rank-2">2</span>
+                        <a href="articles/douyin-live-gift-thanks-assistant.html" class="hot-article-link" title="2026抖音直播礼物感谢助手：自动感谢插件安装使用与问题排查">抖音直播礼物感谢助手全指南</a>
+                        <span class="hot-views">08-09</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number rank-3">3</span>
+                        <a href="articles/yuntu-review.html" class="hot-article-link" title="【新晋黑马】云图机场深度实测：25元极速中转与BGP优化">云图机场深度实测</a>
+                        <span class="hot-views">08-05</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">4</span>
+                        <a href="articles/shadowrocket-node-timeout-config-invalid-slow-2026.html" class="hot-article-link" title="Shadowrocket 节点全部超时、配置文件失效解析">Shadowrocket 节点超时解析</a>
+                        <span class="hot-views">08-03</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">5</span>
+                        <a href="articles/chatgpt-recharge-guide.html" class="hot-article-link" title="2026年国内 ChatGPT 充值开通全攻略">国内 ChatGPT 充值升级攻略</a>
+                        <span class="hot-views">07-28</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">6</span>
+                        <a href="articles/2026-airport-ranking.html" class="hot-article-link" title="2026机场排行：常用网络加速机场推荐与硬核测评">2026常用网络加速机场推荐排行</a>
+                        <span class="hot-views">07-28</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">7</span>
+                        <a href="articles/jisucloud-review.html" class="hot-article-link" title="极速Cloud机场评测：三网精品优化专线与VLESS协议">极速Cloud机场深度评测</a>
+                        <span class="hot-views">07-28</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">8</span>
+                        <a href="articles/flashleap-review.html" class="hot-article-link" title="闪跃机场评测：极速中转与智能线路">闪跃机场公网中转评测</a>
+                        <span class="hot-views">07-17</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">9</span>
+                        <a href="articles/vpn-qa-guide.html" class="hot-article-link" title="科学上网与机场配置常见问题解答 Q&A 避坑指南">科学上网 Q&A 避坑指南</a>
+                        <span class="hot-views">07-17</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">10</span>
+                        <a href="articles/shanhai-review.html" class="hot-article-link" title="山海机场深度实测：隧道中转高连通性">山海机场隧道中转实测</a>
+                        <span class="hot-views">07-15</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">11</span>
+                        <a href="articles/bianjieyun-review.html" class="hot-article-link" title="边界云加速器实测：智能多线BGP中转">边界云加速器 BGP 中转实测</a>
+                        <span class="hot-views">07-15</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">12</span>
+                        <a href="articles/jiujiuba-review.html" class="hot-article-link" title="99吧机场评测：个位数月费大流量">99吧低价大流量机场评测</a>
+                        <span class="hot-views">07-15</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">13</span>
+                        <a href="articles/free-apple-id.html" class="hot-article-link" title="2026 最新美区 Apple ID 账号密码与小火箭下载">最新免费美区 Apple ID 共享</a>
+                        <span class="hot-views">07-06</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">14</span>
+                        <a href="articles/naiyun-run-away.html" class="hot-article-link" title="奈云机场已确信失联跑路警示">奈云机场失联跑路风险预警</a>
+                        <span class="hot-views">07-06</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">15</span>
+                        <a href="articles/shadowrocket-guide.html" class="hot-article-link" title="Shadowrocket (小火箭) 节点导入与规则配置">Shadowrocket 小火箭配置指南</a>
+                        <span class="hot-views">07-06</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">16</span>
+                        <a href="articles/router-vpn-guide.html" class="hot-article-link" title="OpenWrt 软路由配置 OpenClash / PassWall">OpenWrt 软路由全屋加速教程</a>
+                        <span class="hot-views">07-06</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">17</span>
+                        <a href="articles/kuaili-review.html" class="hot-article-link" title="“快狸机场”深度评测：晚高峰无感秒开8K">快狸机场 IEPL 专线深度评测</a>
+                        <span class="hot-views">07-06</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">18</span>
+                        <a href="articles/jilianyun-review.html" class="hot-article-link" title="极连云深度实测：IPLC专线直达，晚高峰0丢包">极连云 IPLC 专线深度实测</a>
+                        <span class="hot-views">07-06</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">19</span>
+                        <a href="articles/edgenova-review.html" class="hot-article-link" title="edgenova边缘节点评测：12元月付天花板">edgenova 边缘节点智能中转实测</a>
+                        <span class="hot-views">07-06</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">20</span>
+                        <a href="articles/sujie-review.html" class="hot-article-link" title="速界机场深度实测：Hysteria 2 下一代协议与IPLC">速界机场 Hysteria 2 协议实测</a>
+                        <span class="hot-views">07-06</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">21</span>
+                        <a href="articles/guangnian-review.html" class="hot-article-link" title="光年梯深度评测：BGP多线中转优化">光年梯老牌 BGP 多线中转评测</a>
+                        <span class="hot-views">07-06</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">22</span>
+                        <a href="articles/kexinyun-review.html" class="hot-article-link" title="可信云机场实测：纯中转优化线路">可信云多设备不限速机场实测</a>
+                        <span class="hot-views">07-06</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">23</span>
+                        <a href="articles/why-paid-airports.html" class="hot-article-link" title="网络加速入门：为什么付费机场远优于免费VPN">为什么付费机场远优于免费VPN</a>
+                        <span class="hot-views">06-28</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">24</span>
+                        <a href="articles/iplc-iepl-transit.html" class="hot-article-link" title="IPLC与IEPL专线机场和普通中转有什么区别">IPLC/IEPL 专线与中转原理解析</a>
+                        <span class="hot-views">06-25</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">25</span>
+                        <a href="articles/protocols-comparison.html" class="hot-article-link" title="Shadowsocks, Trojan, VMess 怎么选">常用代理协议原理大比拼指南</a>
+                        <span class="hot-views">06-20</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">26</span>
+                        <a href="articles/prevent-running.html" class="hot-article-link" title="新手避坑指南：如何降低机场跑路风险">降低机场跑路风险避坑指南</a>
+                        <span class="hot-views">06-15</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">27</span>
+                        <a href="articles/smooth-4k-8k.html" class="hot-article-link" title="优化网络设置实现 4K 与 8K 播放无卡顿">优化网络实现 4K/8K 无卡顿播放</a>
+                        <span class="hot-views">06-11</span>
+                    </li>
+                    <li class="hot-article-item">
+                        <span class="hot-number">28</span>
+                        <a href="articles/subscription-security.html" class="hot-article-link" title="订阅链接安全警告：如何防止订阅地址泄露">防止机场订阅链接泄露安全警告</a>
+                        <span class="hot-views">06-08</span>
+                    </li>
+                </ol>
             </div>
 
             <div class="widget">
