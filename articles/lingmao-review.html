@@ -52,7 +52,7 @@
         }
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1rem;
             margin: 1.5rem 0;
         }
@@ -102,36 +102,40 @@
     </script>
 </head>
 <body>
+    <!-- 顶部导航栏 -->
     <header class="header">
-        <div class="header-container">
+        <nav class="nav-container">
             <a href="../index.html" class="logo">
-                <span class="logo-icon">🌴</span>
-                <span>椰汁网络日志</span>
+                <span>椰汁网络日志</span><div class="logo-dot"></div>
             </a>
-            <nav class="nav">
-                <a href="../index.html" class="nav-link">首页</a>
-                <a href="../ranking.html" class="nav-link">机场排行榜</a>
-                <a href="../tutorial.html" class="nav-link">客户端教程</a>
-                <a href="../articles.html" class="nav-link active">测评与文章</a>
-                <a href="../contact.html" class="nav-link">联系我们</a>
-            </nav>
-        </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html">网站首页</a>
+                <a href="../ranking.html">机场排行</a>
+                <a href="../tutorial.html">小白教程</a>
+                <a href="../articles.html" class="active">技术评测</a>
+                <a href="../contact.html">商务合作</a>
+                <a href="../share-guide.html">账号合租指南</a>
+            </div>
+        </nav>
     </header>
 
-    <div class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
-        <main class="article-detail">
-            <article>
+    <!-- 主布局 -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+            <article class="article-detail-box">
                 <header class="article-header">
-                    <div class="article-meta" style="margin-bottom: 1rem;">
-                        <span class="meta-item"><span class="meta-icon">📁</span>机场评测</span>
-                        <span class="meta-item"><span class="meta-icon">⏱️</span>约 1200 字</span>
-                        <span class="meta-item"><span class="meta-icon">📅</span>2026-08-13</span>
-                        <span class="meta-item"><span class="meta-icon">🏷️</span>灵猫网络, IPLC专线, 原生IP, 1000Mbps</span>
+                    <h1>【全 IPLC 专线】灵猫网络深度实测：原生 IP、1000Mbps带宽与多周期灵活套餐体验</h1>
+                    <div class="article-meta">
+                        <span>📅 发布日期：2026-08-13</span>
+                        <span>🏷️ 专栏评测</span>
+                        <span>👤 作者：椰汁评测组</span>
                     </div>
-                    <h1 class="article-title" style="font-size: 2rem; font-weight: 700; line-height: 1.3; margin-bottom: 1.5rem; color: #ffffff;">
-                        【全 IPLC 专线】灵猫网络深度实测：原生 IP、1000Mbps带宽与多周期灵活套餐体验
-                    </h1>
-                    <div class="tags-container" style="margin-bottom: 1.5rem;">
+                    <div class="tags-container" style="margin-top: 1rem;">
                         <span class="tag-badge">🟦 IPLC 专线</span>
                         <span class="tag-badge">🟩 原生 IP</span>
                         <span class="tag-badge">🟪 多平台支持</span>
