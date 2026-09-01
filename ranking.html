@@ -122,6 +122,160 @@
             border-bottom: 1px solid rgba(0, 242, 254, 0.2);
             color: var(--primary);
         }
+
+        /* 排行榜专用 3 栏式响应布局 */
+        .ranking-3col {
+            max-width: 1440px !important;
+            grid-template-columns: 270px 1fr 280px !important;
+            gap: 2rem !important;
+        }
+
+        @media (max-width: 1280px) {
+            .ranking-3col {
+                grid-template-columns: 250px 1fr !important;
+            }
+            .sidebar.right-sidebar {
+                grid-column: 1 / -1;
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .ranking-3col {
+                grid-template-columns: 1fr !important;
+            }
+            .ads-sidebar-left {
+                position: static !important;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* 左侧付费广告面板 */
+        .ads-sidebar-left {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            z-index: 5;
+        }
+
+        .ads-widget-box {
+            background: var(--bg-panel, rgba(15, 23, 42, 0.6));
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 16px;
+            padding: 1.2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .ads-widget-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px dashed rgba(255, 215, 0, 0.3);
+        }
+
+        .ads-widget-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #FFD700;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .ads-badge-tag {
+            font-size: 0.65rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF416C, #FF4B2B);
+            color: #ffffff;
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .ads-card-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 0.9rem;
+            margin-bottom: 0.85rem;
+            transition: all 0.25s ease;
+        }
+
+        .ads-card-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .ads-card-item:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 0 4px 16px rgba(255, 215, 0, 0.12);
+            background: rgba(0, 150, 199, 0.04);
+        }
+
+        .ads-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.3rem;
+        }
+
+        .ads-card-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .ads-num-1 { background: linear-gradient(135deg, #ffd700, #ffa500); }
+        .ads-num-2 { background: linear-gradient(135deg, #00f2fe, #4facfe); }
+        .ads-num-3 { background: linear-gradient(135deg, #10b981, #059669); }
+
+        .ads-card-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .ads-card-price {
+            font-size: 0.78rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .ads-card-desc {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+            margin: 0.4rem 0 0.6rem 0;
+        }
+
+        .ads-card-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            width: 100%;
+            padding: 0.45rem 0;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
     </style>
     <!-- JSON-LD Structured Data for SEO & GEO -->
     <script type="application/ld+json">
@@ -177,7 +331,85 @@
 
 
     <!-- 主布局 -->
-    <div class="layout-wrapper" style="margin-top: 1rem;">
+    <div class="layout-wrapper ranking-3col" style="margin-top: 1rem;">
+        <!-- 左侧付费广告板块 -->
+        <aside class="ads-sidebar-left">
+            <div class="ads-widget-box">
+                <div class="ads-widget-header">
+                    <div class="ads-widget-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        付费广告推荐
+                    </div>
+                    <span class="ads-badge-tag">赞助商</span>
+                </div>
+                
+                <div class="ads-list">
+                    <!-- 广告 1: 快狸 -->
+                    <div class="ads-card-item">
+                        <div class="ads-card-header">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span class="ads-card-num ads-num-1">1</span>
+                                <span class="ads-card-name">快狸</span>
+                            </div>
+                            <span class="ads-card-price">¥15/月起</span>
+                        </div>
+                        <div class="ads-card-desc">
+                            全企业级 IEPL 物理专线，晚高峰 8K 视频秒开无感。支持原生住宅 IP，ChatGPT/流媒体完美解锁。
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span>优惠码: <strong style="color: var(--primary);">kl888</strong></span>
+                            <span style="color: #10B981; font-weight: 600;">推荐度 99.8%</span>
+                        </div>
+                        <a href="https://yyo649929.kuailiaff.com/#/register?code=EjqxPHQZ" target="_blank" rel="nofollow sponsored noopener" class="btn btn-glow ads-card-btn">
+                            直达官网领特惠 &rarr;
+                        </a>
+                    </div>
+
+                    <!-- 广告 2: 光年梯 -->
+                    <div class="ads-card-item">
+                        <div class="ads-card-header">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span class="ads-card-num ads-num-2">2</span>
+                                <span class="ads-card-name">光年梯</span>
+                            </div>
+                            <span class="ads-card-price">¥10/月起</span>
+                        </div>
+                        <div class="ads-card-desc">
+                            资深老牌加速服务，BGP 多线中转优化，超高性价比大流量套餐，全场景 40+ 地区支持。
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span>老牌稳定运行</span>
+                            <span style="color: #10B981; font-weight: 600;">推荐度 98.5%</span>
+                        </div>
+                        <a href="https://1579.gntaff.com/#/?code=PzvG9uPl" target="_blank" rel="nofollow sponsored noopener" class="btn btn-outline ads-card-btn">
+                            直达官网领特惠 &rarr;
+                        </a>
+                    </div>
+
+                    <!-- 广告 3: edgenova -->
+                    <div class="ads-card-item">
+                        <div class="ads-card-header">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span class="ads-card-num ads-num-3">3</span>
+                                <span class="ads-card-name">edgenova</span>
+                            </div>
+                            <span class="ads-card-price">¥12/月起</span>
+                        </div>
+                        <div class="ads-card-desc">
+                            Anycast 智能边缘节点中转，自动感知分配最优线路。延迟极低，兼顾高性价比与稳定性。
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+                            <span>8折优惠码: <strong style="color: var(--primary);">xk808</strong></span>
+                            <span style="color: #10B981; font-weight: 600;">推荐度 98.2%</span>
+                        </div>
+                        <a href="https://everett7623.edgenovaaff.cc/#/register?code=tT3McfnN" target="_blank" rel="nofollow sponsored noopener" class="btn btn-outline ads-card-btn">
+                            直达官网领特惠 &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
         <!-- 左侧排行榜 -->
         <main class="main-content">
             <div class="ranking-container">
