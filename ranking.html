@@ -198,16 +198,18 @@
             text-align: right;
         }
 
-        /* 页面布局微调：主视口扩大适应 2 列卡片 */
+        /* 页面布局微调：主视口扩大，让中间双列卡片向两边延伸 */
         .layout-wrapper {
-            max-width: 1440px !important;
+            max-width: 1640px !important;
+            padding: 0 1rem !important;
+            gap: 1.5rem !important;
         }
 
-        /* 强制中间机场列表一行展示 2 个卡片 */
+        /* 强制中间机场列表一行展示 2 个卡片，间距调优 */
         .card-list {
             display: grid !important;
             grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            gap: 1.25rem !important;
+            gap: 1.5rem !important;
         }
 
         @media (max-width: 900px) {
