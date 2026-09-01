@@ -197,6 +197,24 @@
             color: var(--primary);
             text-align: right;
         }
+
+        /* 页面布局微调：主视口扩大适应 2 列卡片 */
+        .layout-wrapper {
+            max-width: 1440px !important;
+        }
+
+        /* 强制中间机场列表一行展示 2 个卡片 */
+        .card-list {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 1.25rem !important;
+        }
+
+        @media (max-width: 900px) {
+            .card-list {
+                grid-template-columns: 1fr !important;
+            }
+        }
     </style>
     <!-- JSON-LD Structured Data for SEO & GEO -->
     <script type="application/ld+json">
