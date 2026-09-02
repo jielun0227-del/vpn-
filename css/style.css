@@ -2254,22 +2254,26 @@ body::after {
 
 .friendly-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     gap: 1.25rem;
 }
 
 .friendly-card {
-    background: #ffffff;
-    border: 1px solid rgba(0, 150, 199, 0.15);
-    border-radius: 14px;
-    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.35rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .friendly-card::before {
@@ -2285,9 +2289,10 @@ body::after {
 }
 
 .friendly-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 150, 199, 0.12);
-    border-color: rgba(0, 150, 199, 0.35);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25), 0 0 25px rgba(0, 150, 199, 0.18);
+    border-color: var(--primary);
 }
 
 .friendly-card:hover::before {
@@ -2297,53 +2302,62 @@ body::after {
 .friendly-card-top {
     display: flex;
     align-items: center;
-    gap: 0.85rem;
-    margin-bottom: 0.85rem;
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
 }
 
 .friendly-logo-box {
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 24px;
     flex-shrink: 0;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-    background: #f8fafc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .friendly-card-meta {
     flex-grow: 1;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .friendly-card-title {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 2px;
+    margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: color 0.2s ease;
 }
 
-.friendly-card-domain {
+.friendly-card:hover .friendly-card-title {
+    color: var(--primary);
+}
+
+.friendly-card-tag {
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--primary);
-    background: rgba(0, 150, 199, 0.08);
+    background: rgba(0, 150, 199, 0.12);
+    border: 1px solid rgba(0, 150, 199, 0.25);
     padding: 2px 8px;
-    border-radius: 4px;
+    border-radius: 6px;
     display: inline-block;
+    width: fit-content;
 }
 
 .friendly-card-desc {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 1.1rem;
+    line-height: 1.55;
+    margin-bottom: 1.2rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -2353,31 +2367,33 @@ body::after {
 .friendly-card-action {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 0.75rem;
-    border-top: 1px dashed rgba(0, 0, 0, 0.08);
+    justify-content: flex-end;
+    padding-top: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .friendly-card-btn {
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--primary);
-    text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    transition: color 0.2s ease;
+    gap: 6px;
+    transition: all 0.2s ease;
 }
 
-.friendly-card-btn:hover {
-    color: var(--secondary);
+.friendly-card:hover .friendly-card-btn {
+    color: var(--primary-light, #38bdf8);
+    transform: translateX(3px);
 }
 
 .friendly-card-btn svg {
     transition: transform 0.2s ease;
 }
 
-.friendly-card-btn:hover svg {
+.friendly-card:hover .friendly-card-btn svg {
+    transform: translate(2px, -2px);
+}
     transform: translateX(3px);
 }
 
