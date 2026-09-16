@@ -84,52 +84,83 @@
                ]
 }
     </script>
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://yzrztop.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "科学上网",
+                "item": "https://yzrztop.com/articles.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "IP 纯净度怎么看：ChatGPT 报异常、Netflix 不解锁的节点质量排查全指南（2026）",
+                "item": "https://yzrztop.com/articles/ip-purity-guide-2026.html"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
-    <!-- 头部 Navigation Bar -->
-    <header class="navbar">
-        <div class="navbar-inner">
+
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav-container">
             <a href="../index.html" class="logo">
                 <span>椰汁网络日志</span><div class="logo-dot"></div>
             </a>
-            <nav class="nav-menu">
-                <a href="../index.html" class="nav-item">首页</a>
-                <a href="../ranking.html" class="nav-item">科学上网</a>
-                <a href="../articles.html" class="nav-item active">机场评测</a>
-                <a href="../tutorial.html" class="nav-item">配置教程</a>
-                <a href="../qa.html" class="nav-item">疑难解答</a>
-            </nav>
-            <div class="header-actions">
-                <a href="../ranking.html" class="btn btn-glow btn-sm">最稳机场推荐</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html">网站首页</a>
+                <a href="../ranking.html">机场排行</a>
+                <a href="../tutorial.html">小白教程</a>
+                <a href="../articles.html" class="active">科学上网</a>
+                <a href="../contact.html">商务合作</a>
+                <a href="../share-guide.html">账号合租指南</a>
+                <a href="../links.html">友情链接</a>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <div class="main-layout">
-        <main class="content-area">
-            <article class="article-container">
+    <!-- 主布局 -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+            <article class="article-detail-box">
                 <header class="article-header">
+                    <h1>IP 纯净度怎么看：ChatGPT 报异常、Netflix 不解锁的节点质量排查全指南（2026）</h1>
                     <div class="article-meta">
-                        <span class="badge">节点排障</span>
-                        <time datetime="2026-08-29">2026-08-29</time>
-                        <span>阅读时间：约 8 分钟</span>
-                        <span>作者：椰汁评测组</span>
+                        <span>📅 发布日期：2026-08-29</span>
+                        <span>🏷️ 分类：节点排障</span>
+                        <span>👤 作者：椰汁评测组</span>
                     </div>
-                    <h1 class="article-title">IP 纯净度怎么看：ChatGPT 报异常、Netflix 不解锁的节点质量排查全指南（2026）</h1>
-                    <p class="article-subtitle">节点明明连得上、测速延时低且 4K 秒开，但打开 ChatGPT 却提示 Unusual Activity，Netflix 提示地区不可用，Claude 直接拒之门外？大白话拆解 IP 纯净度、原生/广播/住宅 IP 区别及实操检测工具。</p>
                 </header>
 
-                <!-- 文章核心亮点 -->
-                <div style="background: rgba(0, 150, 199, 0.05); border-left: 4px solid var(--primary); padding: 1.25rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0;">
-                    <h4 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.05rem;">⚡ 30 秒快速速答排查指南</h4>
-                    <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.7; color: var(--text-secondary); font-size: 0.95rem;">
-                        <li><strong>视频极速但进不去 AI/流媒体</strong>：节点网络连通，但 IP 触发了目标网站风控，先切冷门节点或换地区。</li>
-                        <li><strong>切了多个节点依然提示异常</strong>：说明机场整体 IP 池共用严重或被批量拉黑，需要更换原生 IP 或物理专线节点。</li>
-                        <li><strong>想提前测试节点 IP 质量</strong>：先在 Clash/小火箭连上节点，然后使用在线工具查询 IP 风险评分与广播/原生属性。</li>
-                    </ul>
-                </div>
+                <section class="article-body">
+                    <!-- 文章核心亮点 -->
+                    <div style="background: rgba(0, 150, 199, 0.05); border-left: 4px solid var(--primary); padding: 1.25rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0;">
+                        <h4 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.05rem;">⚡ 30 秒快速速答排查指南</h4>
+                        <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.7; color: var(--text-secondary); font-size: 0.95rem;">
+                            <li><strong>视频极速但进不去 AI/流媒体</strong>：节点网络连通，但 IP 触发了目标网站风控，先切冷门节点或换地区。</li>
+                            <li><strong>切了多个节点依然提示异常</strong>：说明机场整体 IP 池共用严重或被批量拉黑，需要更换原生 IP 或物理专线节点。</li>
+                            <li><strong>想提前测试节点 IP 质量</strong>：先在 Clash/小火箭连上节点，然后使用在线工具查询 IP 风险评分与广播/原生属性。</li>
+                        </ul>
+                    </div>
 
-                <div class="article-body">
                     <h2>一、为什么节点速度飞快，却进不去网站？</h2>
                     <p>很多朋友在日常科学上网时常遇到这样令人困惑的场景：小火箭或 Clash 测速显示延迟仅 50ms，打开 YouTube 看 4K 超清视频无比流畅。然而当您准备登录 ChatGPT 办公时，弹出了「Unusual activity detected」；打开 Netflix 追剧，提示「此内容在您的地区不可用」；甚至访问 Claude 或某些海外金融服务时直接返回 Access Denied。</p>
                     <p>即便连续尝试切换了多个节点，依然无法解决问题。大部分用户此时会误以为是代理软件损坏或账号被封锁，但核心根源其实在于：<strong>您所使用的节点 IP 纯净度太差</strong>。节点传输速度与 IP 质量是两个完全独立的维度——速度再快，IP 质量太“脏”，目标网站的风控防线依然会将您拒之门外。</p>
@@ -251,7 +282,7 @@
                             <input type="text" readonly value='<a href="https://yzrztop.com/articles/ip-purity-guide-2026.html" target="_blank" title="IP 纯净度怎么看：ChatGPT 报异常、Netflix 不解锁的节点质量排查全指南（2026） - 椰汁网络日志">IP 纯净度怎么看：ChatGPT 报异常、Netflix 不解锁的节点质量排查全指南（2026）</a>' onclick="this.select()" style="width: 100%; padding: 0.5rem 0.8rem; font-size: 0.82rem; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--primary); font-family: monospace;">
                         </div>
                     </div>
-                </div>
+                </section>
             </article>
         </main>
 
