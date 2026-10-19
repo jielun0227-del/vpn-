@@ -9,3 +9,6 @@
 *.log
 scratch/
 
+# Ignore locally captured third-party page
+page.html
+

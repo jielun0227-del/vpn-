@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>页面未找到 - 椰汁网络日志</title>
+    <meta name="description" content="您访问的页面不存在或已经移动，请返回首页或查看最新文章。">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .not-found {
+            min-height: 72vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.25rem;
+            text-align: center;
+        }
+
+        .not-found-card {
+            width: min(680px, 100%);
+            padding: 3rem 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            background: var(--card-bg);
+        }
+
+        .not-found-code {
+            margin: 0;
+            color: var(--primary);
+            font-size: clamp(4rem, 14vw, 8rem);
+            line-height: 1;
+        }
+
+        .not-found-card h1 {
+            margin: 1rem 0 0.75rem;
+        }
+
+        .not-found-card p {
+            margin: 0 auto 1.75rem;
+            max-width: 520px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .not-found-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">
+                <span>椰汁网络日志</span><div class="logo-dot"></div>
+            </a>
+            <div class="nav-menu">
+                <a href="/">网站首页</a>
+                <a href="/ranking">机场排行</a>
+                <a href="/tutorial">小白教程</a>
+                <a href="/articles">科学上网</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="not-found">
+        <section class="not-found-card" aria-labelledby="not-found-title">
+            <p class="not-found-code" aria-hidden="true">404</p>
+            <h1 id="not-found-title">页面没有找到</h1>
+            <p>这个地址可能已经失效、被移动，或者输入有误。你可以返回首页，或从文章目录继续浏览。</p>
+            <div class="not-found-actions">
+                <a href="/" class="btn btn-glow">返回首页</a>
+                <a href="/articles" class="btn btn-outline">查看文章目录</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
