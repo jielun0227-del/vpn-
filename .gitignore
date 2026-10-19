@@ -9,6 +9,11 @@
 *.log
 scratch/
 
+# Keep local deployment helpers out of the public site
+*.ps1
+*.bat
+task.md
+
 # Ignore locally captured third-party page
 page.html
 
